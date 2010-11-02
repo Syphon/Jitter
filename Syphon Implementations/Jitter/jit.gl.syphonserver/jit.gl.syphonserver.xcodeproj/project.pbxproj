@@ -1,0 +1,393 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		BD4805A01239AE3700DFB19E /* Build Custom Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = BD4805A91239AE7D00DFB19E /* Build configuration list for PBXAggregateTarget "Build Custom Framework" */;
+			buildPhases = (
+				BD48059F1239AE3700DFB19E /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Build Custom Framework";
+			productName = "Build Custom Framework";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1B8F532E11CFB4FE009968B9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F532D11CFB4FE009968B9 /* OpenGL.framework */; };
+		1B8F534411CFB545009968B9 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F534311CFB545009968B9 /* MaxAPI.framework */; };
+		1B8F534611CFB558009968B9 /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F534511CFB558009968B9 /* JitterAPI.framework */; };
+		1B8F534911CFB5AE009968B9 /* jit.gl.syphonserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F534811CFB5AE009968B9 /* jit.gl.syphonserver.m */; };
+		1B8F541B11CFCF98009968B9 /* max.jit.gl.syphonserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonserver.c */; };
+		1B8F573111D02E84009968B9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F573011D02E84009968B9 /* Cocoa.framework */; };
+		1B8F574411D02EBD009968B9 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F574311D02EBD009968B9 /* AGL.framework */; };
+		BD48065B1239AEAA00DFB19E /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4806501239AE9600DFB19E /* Syphon.framework */; };
+		BD48065C1239AEB100DFB19E /* Syphon.framework in Copy Syphon Framework */ = {isa = PBXBuildFile; fileRef = BD4806501239AE9600DFB19E /* Syphon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BD4805A31239AE5800DFB19E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD4805A01239AE3700DFB19E;
+			remoteInfo = "Build Custom Framework";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B8F532B11CFB4E4009968B9 /* Copy Syphon Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BD48065C1239AEB100DFB19E /* Syphon.framework in Copy Syphon Framework */,
+			);
+			name = "Copy Syphon Framework";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = maxmspsdk.xcconfig; sourceTree = "<group>"; };
+		1B8F532D11CFB4FE009968B9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		1B8F534311CFB545009968B9 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../c74support/max-includes/MaxAPI.framework"; sourceTree = SOURCE_ROOT; };
+		1B8F534511CFB558009968B9 /* JitterAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JitterAPI.framework; path = "../c74support/jit-includes/JitterAPI.framework"; sourceTree = SOURCE_ROOT; };
+		1B8F534811CFB5AE009968B9 /* jit.gl.syphonserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jit.gl.syphonserver.m; sourceTree = "<group>"; };
+		1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = max.jit.gl.syphonserver.c; sourceTree = "<group>"; };
+		1B8F573011D02E84009968B9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		1B8F574311D02EBD009968B9 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = System/Library/Frameworks/AGL.framework; sourceTree = SDKROOT; };
+		8D576316048677EA00EA77CD /* jit.gl.syphonserver.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.gl.syphonserver.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD4806501239AE9600DFB19E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D576313048677EA00EA77CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD48065B1239AEAA00DFB19E /* Syphon.framework in Frameworks */,
+				1B8F532E11CFB4FE009968B9 /* OpenGL.framework in Frameworks */,
+				1B8F534411CFB545009968B9 /* MaxAPI.framework in Frameworks */,
+				1B8F534611CFB558009968B9 /* JitterAPI.framework in Frameworks */,
+				1B8F573111D02E84009968B9 /* Cocoa.framework in Frameworks */,
+				1B8F574411D02EBD009968B9 /* AGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		089C166AFE841209C02AAC07 /* jit.gl.syphon */ = {
+			isa = PBXGroup;
+			children = (
+				1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */,
+				08FB77AFFE84173DC02AAC07 /* Source */,
+				089C167CFE841241C02AAC07 /* Resources */,
+				089C1671FE841209C02AAC07 /* Linked Frameworks */,
+				19C28FB6FE9D52B211CA2CBB /* Products */,
+			);
+			name = jit.gl.syphon;
+			sourceTree = "<group>";
+		};
+		089C1671FE841209C02AAC07 /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B8F534511CFB558009968B9 /* JitterAPI.framework */,
+				1B8F534311CFB545009968B9 /* MaxAPI.framework */,
+				1B8F532D11CFB4FE009968B9 /* OpenGL.framework */,
+				1B8F573011D02E84009968B9 /* Cocoa.framework */,
+				1B8F574311D02EBD009968B9 /* AGL.framework */,
+				BD4806501239AE9600DFB19E /* Syphon.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		089C167CFE841241C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D576317048677EA00EA77CD /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AFFE84173DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1B8F534811CFB5AE009968B9 /* jit.gl.syphonserver.m */,
+				1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonserver.c */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		19C28FB6FE9D52B211CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D576316048677EA00EA77CD /* jit.gl.syphonserver.mxo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1B8F560B11D01E62009968B9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8D57630D048677EA00EA77CD /* jit.gl.syphonserver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB911A08733D790010E9CD /* Build configuration list for PBXNativeTarget "jit.gl.syphonserver" */;
+			buildPhases = (
+				1B8F560B11D01E62009968B9 /* Headers */,
+				8D57630F048677EA00EA77CD /* Resources */,
+				8D576311048677EA00EA77CD /* Sources */,
+				8D576313048677EA00EA77CD /* Frameworks */,
+				1B8F532B11CFB4E4009968B9 /* Copy Syphon Framework */,
+				1B8F560C11D01E62009968B9 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD4805A41239AE5800DFB19E /* PBXTargetDependency */,
+			);
+			name = jit.gl.syphonserver;
+			productInstallPath = "$(HOME)/Library/Bundles";
+			productName = jit.gl.syphon;
+			productReference = 8D576316048677EA00EA77CD /* jit.gl.syphonserver.mxo */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		089C1669FE841209C02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB911E08733D790010E9CD /* Build configuration list for PBXProject "jit.gl.syphonserver" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 089C166AFE841209C02AAC07 /* jit.gl.syphon */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD4805A01239AE3700DFB19E /* Build Custom Framework */,
+				8D57630D048677EA00EA77CD /* jit.gl.syphonserver */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D57630F048677EA00EA77CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		1B8F560C11D01E62009968B9 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BD48059F1239AE3700DFB19E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$PROJECT_DIR/../../../Syphon Framework/\"\nxcodebuild -configuration \"$CONFIGURATION\" ARCHS=\"$ARCHS\" VALID_ARCHS=\"$VALID_ARCHS\" OBJROOT=\"$OBJROOT\" SYMROOT=\"$SYMROOT\" GCC_PREPROCESSOR_DEFINITIONS=SYPHON_UNIQUE_CLASS_NAME_PREFIX=SyphonJitterServer";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D576311048677EA00EA77CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B8F534911CFB5AE009968B9 /* jit.gl.syphonserver.m in Sources */,
+				1B8F541B11CFCF98009968B9 /* max.jit.gl.syphonserver.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD4805A41239AE5800DFB19E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD4805A01239AE3700DFB19E /* Build Custom Framework */;
+			targetProxy = BD4805A31239AE5800DFB19E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB911B08733D790010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = i386;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(CONFIGURATION_BUILD_DIR)\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(C74SUPPORT)/max-includes/macho-gl-prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				GENERATE_PKGINFO_FILE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = /;
+				PREBINDING = YES;
+				PRODUCT_NAME = jit.gl.syphonserver;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Debug;
+		};
+		1DEB911C08733D790010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = i386;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(CONFIGURATION_BUILD_DIR)\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_MODEL_TUNING = G4;
+				GCC_PREFIX_HEADER = "$(C74SUPPORT)/max-includes/macho-gl-prefix.pch";
+				GCC_VERSION = "";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				PREBINDING = YES;
+				PRODUCT_NAME = jit.gl.syphonserver;
+				WRAPPER_EXTENSION = mxo;
+			};
+			name = Release;
+		};
+		1DEB911F08733D790010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = "";
+				VALID_ARCHS = i386;
+			};
+			name = Debug;
+		};
+		1DEB912008733D790010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH)";
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "";
+				VALID_ARCHS = i386;
+			};
+			name = Release;
+		};
+		BD4805A11239AE3700DFB19E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build Custom Framework";
+			};
+			name = Debug;
+		};
+		BD4805A21239AE3700DFB19E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build Custom Framework";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB911A08733D790010E9CD /* Build configuration list for PBXNativeTarget "jit.gl.syphonserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB911B08733D790010E9CD /* Debug */,
+				1DEB911C08733D790010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB911E08733D790010E9CD /* Build configuration list for PBXProject "jit.gl.syphonserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB911F08733D790010E9CD /* Debug */,
+				1DEB912008733D790010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD4805A91239AE7D00DFB19E /* Build configuration list for PBXAggregateTarget "Build Custom Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD4805A11239AE3700DFB19E /* Debug */,
+				BD4805A21239AE3700DFB19E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 089C1669FE841209C02AAC07 /* Project object */;
+}
