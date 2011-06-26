@@ -12,16 +12,16 @@
 	<string>info.v002.syphon.${PRODUCT_NAME}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleLongVersionString</key>
+	<string>${PRODUCT_NAME} ${PRODUCT_VERSION}, Copyright © 2010-2011 Anton Marini &amp; Tom Butterworth, All Rights Reserved.</string>
 	<key>CFBundlePackageType</key>
 	<string>iLaX</string>
+	<key>CFBundleShortVersionString</key>
+	<string>${PRODUCT_VERSION}</string>
 	<key>CFBundleSignature</key>
 	<string>max2</string>
 	<key>CFBundleVersion</key>
 	<string>${PRODUCT_VERSION}</string>
-	<key>CFBundleShortVersionString</key>
-	<string>${PRODUCT_VERSION}</string>
-	<key>CFBundleLongVersionString</key>
-	<string>${PRODUCT_NAME} ${PRODUCT_VERSION}, Copyright © 2010 Anton Marini &amp; Tom Butterworth, All Rights Reserved.</string>
 	<key>CSResourcesFileMapped</key>
 	<true/>
 </dict>
