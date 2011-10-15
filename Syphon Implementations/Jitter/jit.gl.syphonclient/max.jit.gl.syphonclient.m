@@ -106,7 +106,8 @@ void max_jit_gl_syphon_client_free(t_max_jit_gl_syphon_client *x)
 	max_jit_ob3d_detach(x);
 
 	// lookup our internal Jitter object instance and free
-	jit_object_free(max_jit_obex_jitob_get(x));
+	if(max_jit_obex_jitob_get(x))
+		jit_object_free(max_jit_obex_jitob_get(x));
 	
 	// free resources associated with our obex entry
 	max_jit_obex_free(x);

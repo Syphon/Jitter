@@ -280,7 +280,8 @@ void jit_gl_syphon_client_free(t_jit_gl_syphon_client *jit_gl_syphon_client_inst
 		jit_object_free(jit_gl_syphon_client_instance->output);
 	
 	// free ourselves
-	jit_ob3d_free(jit_gl_syphon_client_instance);
+	if(jit_gl_syphon_client_instance)
+		jit_ob3d_free(jit_gl_syphon_client_instance);
 }
 
 
@@ -483,10 +484,6 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 				glPopAttrib();
 				glPopClientAttrib();
 
-				glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, previousFBO);	
-				glBindFramebufferEXT(GL_READ_FRAMEBUFFER_EXT, previousReadFBO);
-				glBindFramebufferEXT(GL_DRAW_FRAMEBUFFER_EXT, previousDrawFBO);
-
 				glMatrixMode(previousMatrixMode);
 				
 				// clean up after ourselves
@@ -499,6 +496,11 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			{
 				post("jit.gl.syphonclient could not attach to FBO");
 			}
+			
+			glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, previousFBO);	
+			glBindFramebufferEXT(GL_READ_FRAMEBUFFER_EXT, previousReadFBO);
+			glBindFramebufferEXT(GL_DRAW_FRAMEBUFFER_EXT, previousDrawFBO);			
+			
 			[frame release];
 			jit_gl_set_context(ctx);
 		}
