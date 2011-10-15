@@ -413,7 +413,6 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 				glPushMatrix();
 				glLoadIdentity();
 				
-				
 				glViewport(0, 0,  width, height);
 				glMatrixMode(GL_PROJECTION);
 				glPushMatrix();
@@ -481,9 +480,6 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 				glMatrixMode(GL_TEXTURE);
 				glPopMatrix();
 
-				glPopAttrib();
-				glPopClientAttrib();
-
 				glMatrixMode(previousMatrixMode);
 				
 				// clean up after ourselves
@@ -496,6 +492,9 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			{
 				post("jit.gl.syphonclient could not attach to FBO");
 			}
+			
+			glPopAttrib();
+			glPopClientAttrib();			
 			
 			glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, previousFBO);	
 			glBindFramebufferEXT(GL_READ_FRAMEBUFFER_EXT, previousReadFBO);
