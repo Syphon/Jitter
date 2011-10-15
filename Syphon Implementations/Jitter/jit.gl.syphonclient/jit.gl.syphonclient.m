@@ -366,7 +366,6 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 
             // update our internal attribute so attr messages work
 			jit_attr_setlong_array(jit_gl_syphon_client_instance, _jit_sym_dim, 2, newdim);
-			
 
 			// save some state
 			GLint previousFBO;	// make sure we pop out to the right FBO
@@ -383,7 +382,6 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			glPushAttrib(GL_ALL_ATTRIB_BITS);
 			glPushClientAttrib(GL_CLIENT_ALL_ATTRIB_BITS);
 
-			
 			// We are going to bind our FBO to our internal jit.gl.texture as COLOR_0 attachment
 			// We need the ID, width/height.
 			
@@ -427,7 +425,7 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 				// render our syphon texture to our jit.gl.texture's texture.
 				glColor4f(1.0, 1.0, 1.0, 1.0);
 				
-				glActiveTexture(GL_TEXTURE0);
+				//glActiveTexture(GL_TEXTURE0);
 				
                 // Moved above.
 				//if ([client bindFrameTexture:cgl_ctx] != 0);
@@ -486,7 +484,8 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 				glDeleteFramebuffers(1, &tempFBO);
 				tempFBO = 0;
 				
-				glFlushRenderAPPLE();	
+				// Is this needed? 
+				//glFlushRenderAPPLE();	
 			}
 			else 
 			{
