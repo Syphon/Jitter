@@ -265,23 +265,21 @@ t_jit_gl_syphon_client *jit_gl_syphon_client_new(t_symbol * dest_name)
 
 void jit_gl_syphon_client_free(t_jit_gl_syphon_client *jit_gl_syphon_client_instance)
 {
-	// free our ob3d data 
-	jit_ob3d_free(jit_gl_syphon_client_instance);
-	
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 	
 	[jit_gl_syphon_client_instance->syClient release];
 	jit_gl_syphon_client_instance->syClient = nil;
 	
 	[pool drain];
+
+	// free our ob3d data 
+	if(jit_gl_syphon_client_instance)
+		jit_ob3d_free(jit_gl_syphon_client_instance);
+
 	
 	// free our internal texture
 	if(jit_gl_syphon_client_instance->output)
 		jit_object_free(jit_gl_syphon_client_instance->output);
-	
-	// free ourselves
-	if(jit_gl_syphon_client_instance)
-		jit_ob3d_free(jit_gl_syphon_client_instance);
 }
 
 
@@ -403,9 +401,9 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			{
 				//post("jit.gl.syphonclient  FBO complete");
 
-				// save more state.
-				glClearColor(0.0, 0.0, 0.0, 0.0);
-				glClear(GL_COLOR_BUFFER_BIT);				
+				// Using replace blend mode, no need to clear?
+				//glClearColor(0.0, 0.0, 0.0, 0.0);
+				//glClear(GL_COLOR_BUFFER_BIT);				
 				
 				glMatrixMode(GL_TEXTURE);
 				glPushMatrix();
