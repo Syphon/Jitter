@@ -37,7 +37,6 @@
 
 t_jit_err jit_ob3d_dest_name_set(t_jit_object *x, void *attr, long argc, t_atom *argv);
 
-
 typedef struct _jit_gl_syphon_server 
 {
 	// Max object
@@ -60,7 +59,6 @@ typedef struct _jit_gl_syphon_server
 } t_jit_gl_syphon_server;
 
 void *_jit_gl_syphon_server_class;
-
 
 #pragma mark -
 #pragma mark Function Declarations
@@ -109,7 +107,6 @@ t_symbol *ps_jit_gl_texture;
 #pragma mark -
 #pragma mark Init, New, Cleanup, Context changes
 
-
 t_jit_err jit_gl_syphon_server_init(void) 
 {
 	// create our class
@@ -137,7 +134,6 @@ t_jit_err jit_gl_syphon_server_init(void)
 	attr = jit_object_new(_jit_sym_jit_attr_offset,"servername",_jit_sym_symbol,attrflags,
 						  (method)0L, jit_gl_syphon_server_servername, calcoffset(t_jit_gl_syphon_server, servername));	
 	jit_class_addattr(_jit_gl_syphon_server_class,attr);	
-	
 	
 	// define our dest_closing and dest_changed methods. 
 	// these methods are called by jit.gl.render when the 
@@ -182,23 +178,31 @@ t_jit_err jit_gl_syphon_server_init(void)
 
 t_jit_gl_syphon_server *jit_gl_syphon_server_new(t_symbol * dest_name)
 {
-	t_jit_gl_syphon_server *jit_gl_syphon_server_instance;
+	post("New Server");
+	
+	t_jit_gl_syphon_server *jit_gl_syphon_server_instance = NULL;
 	
 	// make jit object
 	if (jit_gl_syphon_server_instance = (t_jit_gl_syphon_server *)jit_object_alloc(_jit_gl_syphon_server_class)) 
 	{
+		post("Attach OB3D");
+
 		// create and attach ob3d
 		jit_ob3d_new(jit_gl_syphon_server_instance, dest_name);
 
 		// TODO : is this right ? 
 		// set up attributes
 		jit_attr_setsym(jit_gl_syphon_server_instance->servername, _jit_sym_name, gensym("servername"));
-			
+
+		post("Create Texture");
+
 		// instantiate a single internal jit.gl.texture should we need it.
 		jit_gl_syphon_server_instance->texture = jit_object_new(ps_jit_gl_texture,jit_attr_getsym(jit_gl_syphon_server_instance,ps_drawto));
-
+		
 		if (jit_gl_syphon_server_instance->texture)
 		{
+			post("Setup Texture");
+
 			// set texture attributes.
 			t_symbol *name =  jit_symbol_unique();
 			jit_attr_setsym(jit_gl_syphon_server_instance->texture,_jit_sym_name,name);
@@ -225,11 +229,11 @@ t_jit_gl_syphon_server *jit_gl_syphon_server_new(t_symbol * dest_name)
 	return jit_gl_syphon_server_instance;
 }
 
-
 void jit_gl_syphon_server_free(t_jit_gl_syphon_server *jit_gl_syphon_server_instance)
 {
-	// free our ob3d data 
-	jit_ob3d_free(jit_gl_syphon_server_instance);
+	// free our ob3d data
+	if(jit_gl_syphon_server_instance)
+		jit_ob3d_free(jit_gl_syphon_server_instance);
 	
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 	
@@ -247,7 +251,6 @@ void jit_gl_syphon_server_free(t_jit_gl_syphon_server *jit_gl_syphon_server_inst
 		jit_object_free(jit_gl_syphon_server_instance->texture);
 }
 
-
 t_jit_err jit_gl_syphon_server_dest_closing(t_jit_gl_syphon_server *jit_gl_syphon_server_instance)
 {
 	return JIT_ERR_NONE;
@@ -255,27 +258,45 @@ t_jit_err jit_gl_syphon_server_dest_closing(t_jit_gl_syphon_server *jit_gl_sypho
 
 t_jit_err jit_gl_syphon_server_dest_changed(t_jit_gl_syphon_server *jit_gl_syphon_server_instance)
 {	
+	post("Destination Changed");
+	
 	// try and find a context.
 	t_jit_gl_context jit_ctx = 0;
-	
+
+	post("Getting Context");
+
 	// jitter context
 	jit_ctx = jit_gl_get_context();
 
+	post("Got Context");
+
 	if(jit_ctx)
 	{
+		post("Have Context");
+		
 		NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
 		if(jit_gl_syphon_server_instance->syServer)
         {
+			post("Removing Server");
+			
             [jit_gl_syphon_server_instance->syServer release];
             jit_gl_syphon_server_instance->syServer = nil;
 		}
         
-        jit_gl_syphon_server_instance->syServer = [[SyphonServer alloc] initWithName:[NSString stringWithCString:jit_gl_syphon_server_instance->servername->s_name encoding:NSASCIIStringEncoding]
+		post("Creating Server");
+		
+		jit_gl_syphon_server_instance->syServer = [[SyphonServer alloc] initWithName:[NSString stringWithCString:jit_gl_syphon_server_instance->servername->s_name encoding:NSASCIIStringEncoding]
                                                                              context:CGLGetCurrentContext()
                                                                              options:nil];
         
 		[pool drain];
+		
+		if (jit_gl_syphon_server_instance->texture)
+			jit_attr_setsym(jit_gl_syphon_server_instance->texture,ps_drawto,jit_attr_getsym(jit_gl_syphon_server_instance,ps_drawto));	
+	}
+	else {
+		post("No context detected");
 	}
 	
 	if(jit_gl_syphon_server_instance->syServer == nil)
@@ -283,10 +304,6 @@ t_jit_err jit_gl_syphon_server_dest_changed(t_jit_gl_syphon_server *jit_gl_sypho
 		post("jit.gl.syphonserver: Could not create Syphon Server.. bailing");
 		return JIT_ERR_GENERIC;
 	}
-	
-	if (jit_gl_syphon_server_instance->texture)
-		jit_attr_setsym(jit_gl_syphon_server_instance->texture,ps_drawto,jit_attr_getsym(jit_gl_syphon_server_instance,ps_drawto));	
-	
 	return JIT_ERR_NONE;
 }
 
@@ -323,7 +340,6 @@ t_jit_err jit_gl_syphon_server_jit_matrix(t_jit_gl_syphon_server *jit_gl_syphon_
 	return JIT_ERR_NONE;
 }
 
-
 // handle texture input 
 t_jit_err jit_gl_syphon_server_jit_gl_texture(t_jit_gl_syphon_server *jit_gl_syphon_server_instance, t_symbol *s, int argc, t_atom *argv)
 {
@@ -340,13 +356,11 @@ t_jit_err jit_gl_syphon_server_jit_gl_texture(t_jit_gl_syphon_server *jit_gl_syp
 	return JIT_ERR_NONE;
 }
 
-
 #pragma mark -
 #pragma mark Draw
 
 t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server_instance)
 {
-//	post("draw");
 	if (!jit_gl_syphon_server_instance)
 		return JIT_ERR_INVALID_PTR;
 
@@ -358,7 +372,8 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 		GLuint texName = jit_attr_getlong(texture,ps_glid);
 		GLuint width = jit_attr_getlong(texture,ps_width);
 		GLuint height = jit_attr_getlong(texture,ps_height);
-		BOOL flip = jit_attr_getlong(texture,ps_flip);
+		// dont ask
+		BOOL flip = ! ( (BOOL) jit_attr_getlong(texture,ps_flip));
 		GLuint texTarget = jit_attr_getlong(texture, ps_gltarget);
 
 		// all of these must be > 0
@@ -372,7 +387,7 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 				jit_ob3d_set_context(jit_gl_syphon_server_instance);
 	
 				NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-								
+				
 				// output our frame
 				[jit_gl_syphon_server_instance->syServer publishFrameTexture:texName
 															   textureTarget:texTarget
@@ -393,7 +408,6 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 		
 #pragma mark -
 #pragma mark Attributes
-
 
 // attributes
 // @servername
