@@ -372,9 +372,9 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 		GLuint texName = jit_attr_getlong(texture,ps_glid);
 		GLuint width = jit_attr_getlong(texture,ps_width);
 		GLuint height = jit_attr_getlong(texture,ps_height);
-		// dont ask
-		BOOL flip = ! ( (BOOL) jit_attr_getlong(texture,ps_flip));
 		GLuint texTarget = jit_attr_getlong(texture, ps_gltarget);
+
+		BOOL flip = ( (BOOL) jit_attr_getlong(texture,ps_flip));
 
 		// all of these must be > 0
 		if(texName && width && height)
