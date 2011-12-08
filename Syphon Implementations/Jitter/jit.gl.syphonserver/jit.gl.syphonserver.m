@@ -258,33 +258,33 @@ t_jit_err jit_gl_syphon_server_dest_closing(t_jit_gl_syphon_server *jit_gl_sypho
 
 t_jit_err jit_gl_syphon_server_dest_changed(t_jit_gl_syphon_server *jit_gl_syphon_server_instance)
 {	
-	post("Destination Changed");
+	//post("Destination Changed");
 	
 	// try and find a context.
 	t_jit_gl_context jit_ctx = 0;
 
-	post("Getting Context");
+	//post("Getting Context");
 
 	// jitter context
 	jit_ctx = jit_gl_get_context();
 
-	post("Got Context");
+	//post("Got Context");
 
 	if(jit_ctx)
 	{
-		post("Have Context");
+		//post("Have Context");
 		
 		NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 
 		if(jit_gl_syphon_server_instance->syServer)
         {
-			post("Removing Server");
+			//post("Removing Server");
 			
             [jit_gl_syphon_server_instance->syServer release];
             jit_gl_syphon_server_instance->syServer = nil;
 		}
         
-		post("Creating Server");
+		//post("Creating Server");
 		
 		jit_gl_syphon_server_instance->syServer = [[SyphonServer alloc] initWithName:[NSString stringWithCString:jit_gl_syphon_server_instance->servername->s_name encoding:NSASCIIStringEncoding]
                                                                              context:CGLGetCurrentContext()
@@ -296,7 +296,7 @@ t_jit_err jit_gl_syphon_server_dest_changed(t_jit_gl_syphon_server *jit_gl_sypho
 			jit_attr_setsym(jit_gl_syphon_server_instance->texture,ps_drawto,jit_attr_getsym(jit_gl_syphon_server_instance,ps_drawto));	
 	}
 	else {
-		post("No context detected");
+		post("No OpenGL context detected");
 	}
 	
 	if(jit_gl_syphon_server_instance->syServer == nil)
@@ -366,6 +366,12 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 
 	if(jit_gl_syphon_server_instance->textureSource)
 	{
+		// cache/restore context in case in capture mode
+		
+		// TODO: necessary ? JKC says no unless context changed above? should be set during draw for you. 		
+		t_jit_gl_context ctx = jit_gl_get_context();
+		jit_ob3d_set_context(jit_gl_syphon_server_instance);
+		
 		// get our latest texture info.
 		t_jit_object *texture = (t_jit_object*)jit_object_findregistered(jit_gl_syphon_server_instance->textureSource);
 					
@@ -374,18 +380,22 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 		GLuint height = jit_attr_getlong(texture,ps_height);
 		GLuint texTarget = jit_attr_getlong(texture, ps_gltarget);
 
-		BOOL flip = ( (BOOL) jit_attr_getlong(texture,ps_flip));
+		BOOL flip = ((BOOL)  jit_attr_getlong(texture,ps_flip));
 
 		// all of these must be > 0
 		if(texName && width && height)
 		{
-			//post ("jit.gl.syphonserver: recieved texture object: %i %i %i %i", texName, width, height, texTarget);
+			// For debugging..
+			//post ("jit.gl.syphonserver: recieved texture object: %i %i %i %i", texName, width, height, (texTarget == GL_TEXTURE_RECTANGLE_EXT) ? 1	: 0);
 					
 			if(jit_gl_syphon_server_instance->syServer)
-			{
-				// try and find a context.
-				jit_ob3d_set_context(jit_gl_syphon_server_instance);
-	
+			{	
+				// This is a temporary fix until we resolve the issue in a new Syphon Framework (Public Beta 3 or what not)
+				// Jitter uses multuple texture coordinate arrays on different units, and we (Syphon) erronously do not re-set  
+				// our internal Client Active Texture in the framework to GL_TEXTURE0, thus our texture coord array is not set.
+				glPushClientAttrib(GL_CLIENT_ALL_ATTRIB_BITS);
+				glClientActiveTexture(GL_TEXTURE0);
+
 				NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 				
 				// output our frame
@@ -395,8 +405,12 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 														   textureDimensions:NSMakeSize(width, height)
 																	 flipped:flip];
 				[pool drain];
+				
+				glPopClientAttrib();
 			}
 		}
+		
+		jit_gl_set_context(ctx);
 	}
 	else
 	{

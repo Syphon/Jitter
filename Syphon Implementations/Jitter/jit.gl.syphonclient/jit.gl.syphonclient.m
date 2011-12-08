@@ -38,7 +38,6 @@
 
 t_jit_err jit_ob3d_dest_name_set(t_jit_object *x, void *attr, long argc, t_atom *argv);
 
-
 typedef struct _jit_gl_syphon_client 
 {
 	// Max object
@@ -82,7 +81,6 @@ t_jit_err jit_gl_syphon_client_dest_changed(t_jit_gl_syphon_client *jit_gl_sypho
 t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client_instance);
 t_jit_err jit_gl_syphon_client_drawto(t_jit_gl_syphon_client *x, t_symbol *s, int argc, t_atom *argv);
 
-
 //attributes
 // serveruuid, for server human readable name
 t_jit_err jit_gl_syphon_client_servername(t_jit_gl_syphon_client *jit_gl_syphon_client_instance, void *attr, long argc, t_atom *argv);
@@ -96,7 +94,6 @@ t_jit_err jit_gl_syphon_client_getattr_out_name(t_jit_gl_syphon_client *jit_gl_s
 
 // dim
 t_jit_err jit_gl_syphon_client_setattr_dim(t_jit_gl_syphon_client *x, void *attr, long argc, t_atom *argv);
-
 
 // symbols
 t_symbol *ps_servername;
@@ -119,7 +116,6 @@ extern t_symbol *ps_jit_gl_texture;
 
 #pragma mark -
 #pragma mark Init, New, Cleanup, Context changes
-
 
 t_jit_err jit_gl_syphon_client_init(void) 
 {
@@ -216,7 +212,6 @@ t_jit_gl_syphon_client *jit_gl_syphon_client_new(t_symbol * dest_name)
 	// make jit object
 	if (jit_gl_syphon_client_instance = (t_jit_gl_syphon_client *)jit_object_alloc(_jit_gl_syphon_client_class)) 
 	{
-	
 		// TODO : is this right ? 
 		// set up attributes
 		jit_attr_setsym(jit_gl_syphon_client_instance->servername, _jit_sym_name, gensym("servername"));
@@ -262,7 +257,6 @@ t_jit_gl_syphon_client *jit_gl_syphon_client_new(t_symbol * dest_name)
 	return jit_gl_syphon_client_instance;
 }
 
-
 void jit_gl_syphon_client_free(t_jit_gl_syphon_client *jit_gl_syphon_client_instance)
 {
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
@@ -275,13 +269,11 @@ void jit_gl_syphon_client_free(t_jit_gl_syphon_client *jit_gl_syphon_client_inst
 	// free our ob3d data 
 	if(jit_gl_syphon_client_instance)
 		jit_ob3d_free(jit_gl_syphon_client_instance);
-
 	
 	// free our internal texture
 	if(jit_gl_syphon_client_instance->output)
 		jit_object_free(jit_gl_syphon_client_instance->output);
 }
-
 
 t_jit_err jit_gl_syphon_client_dest_closing(t_jit_gl_syphon_client *jit_gl_syphon_client_instance)
 {
@@ -343,14 +335,13 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			jit_gl_syphon_client_instance->needsRedraw = NO;
 
 			// cache/restore context in case in capture mode
+			// TODO: necessary ? JKC says no unless context changed above? should be set during draw for you. 
 			t_jit_gl_context ctx = jit_gl_get_context();
-
 			jit_ob3d_set_context(jit_gl_syphon_client_instance);
 			
 			// add texture to OB3D list.
 			jit_attr_setsym(jit_gl_syphon_client_instance,ps_texture, jit_attr_getsym(jit_gl_syphon_client_instance->output, gensym("name")));
 			
-            
             // Bind the Syphon Texture early, so we can base the viewport on the framesize and update our internal texture
             // ahead of rendering.
 			SyphonImage *frame = [client newFrameImageForContext:CGLGetCurrentContext()];
@@ -393,6 +384,8 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			GLuint tempFBO;
 			glGenFramebuffers(1, &tempFBO);
 			glBindFramebuffer(GL_FRAMEBUFFER, tempFBO);
+			
+			// TODO: check texture target and sset appropriately, dont assume rect
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_RECTANGLE_ARB, texname, 0);
 			
 			// it work?
@@ -422,9 +415,7 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 				
 				// render our syphon texture to our jit.gl.texture's texture.
 				glColor4f(1.0, 1.0, 1.0, 1.0);
-				
-				//glActiveTexture(GL_TEXTURE0);
-				
+								
                 // Moved above.
 				//if ([client bindFrameTexture:cgl_ctx] != 0);
 				{
@@ -436,7 +427,9 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 					
 					// do not need blending if we use black border for alpha and replace env mode, saves a buffer wipe
 					// we can do this since our image draws over the complete surface of the FBO, no pixel goes untouched.
-                    glEnable(GL_TEXTURE_RECTANGLE_EXT);
+					glActiveTexture(GL_TEXTURE0);
+                    glClientActiveTexture(GL_TEXTURE0);
+					glEnable(GL_TEXTURE_RECTANGLE_EXT);
                     glBindTexture(GL_TEXTURE_RECTANGLE_EXT, [frame textureName]);
                     
 					glDisable(GL_BLEND);
@@ -498,6 +491,7 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			glBindFramebufferEXT(GL_DRAW_FRAMEBUFFER_EXT, previousDrawFBO);			
 			
 			[frame release];
+			
 			jit_gl_set_context(ctx);
 		}
 	}
@@ -509,7 +503,6 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 		
 #pragma mark -
 #pragma mark Attributes
-
 
 // attributes
 // @serveruuid
@@ -524,7 +517,6 @@ t_jit_err jit_gl_syphon_client_servername(t_jit_gl_syphon_client *jit_gl_syphon_
 			srvname = jit_atom_getsym(argv);
 
 			jit_gl_syphon_client_instance->servername = srvname;
-
 		} 
 		else
 		{
@@ -534,14 +526,11 @@ t_jit_err jit_gl_syphon_client_servername(t_jit_gl_syphon_client *jit_gl_syphon_
 		// if we have a server release it, 
 		// make a new one, with our new UUID.
 		NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-		
 		[jit_gl_syphon_client_instance->syClient setName:[NSString stringWithCString:jit_gl_syphon_client_instance->servername->s_name
 																			encoding:NSASCIIStringEncoding]];
 		jit_gl_syphon_client_instance->needsRedraw = YES;
 		
 		[pool drain];
-		
-		
 	}
 	return JIT_ERR_NONE;
 }
@@ -557,7 +546,6 @@ t_jit_err jit_gl_syphon_client_appname(t_jit_gl_syphon_client *jit_gl_syphon_cli
 			appname = jit_atom_getsym(argv);
 			
 			jit_gl_syphon_client_instance->appname = appname;
-			
 		} 
 		else
 		{
@@ -573,8 +561,6 @@ t_jit_err jit_gl_syphon_client_appname(t_jit_gl_syphon_client *jit_gl_syphon_cli
 		jit_gl_syphon_client_instance->needsRedraw = YES;
 		
 		[pool drain];
-		
-		
 	}
 	return JIT_ERR_NONE;
 }
@@ -604,6 +590,7 @@ t_jit_err jit_gl_syphon_client_getattr_out_name(t_jit_gl_syphon_client *jit_gl_s
 			return JIT_ERR_OUT_OF_MEM;
 		}
 	}
+	
 	jit_atom_setsym(*av,jit_attr_getsym(jit_gl_syphon_client_instance->output,_jit_sym_name));
 	// jit_object_post((t_object *)x,"jit.gl.imageunit: sending output: %s", JIT_SYM_SAFECSTR(jit_attr_getsym(x->output,_jit_sym_name)));
 	
