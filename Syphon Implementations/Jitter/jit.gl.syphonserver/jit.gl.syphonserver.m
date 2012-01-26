@@ -286,7 +286,12 @@ t_jit_err jit_gl_syphon_server_dest_changed(t_jit_gl_syphon_server *jit_gl_sypho
         
 		//post("Creating Server");
 		
-		jit_gl_syphon_server_instance->syServer = [[SyphonServer alloc] initWithName:[NSString stringWithCString:jit_gl_syphon_server_instance->servername->s_name encoding:NSASCIIStringEncoding]
+		// check to ensure we actally have a fucking name as an attribute, otherwise, give it a @""
+		NSString* name = @"";
+		if(jit_gl_syphon_server_instance->servername)
+			name = [NSString stringWithCString:jit_gl_syphon_server_instance->servername->s_name encoding:NSASCIIStringEncoding];
+		
+		jit_gl_syphon_server_instance->syServer = [[SyphonServer alloc] initWithName:name
                                                                              context:CGLGetCurrentContext()
                                                                              options:nil];
         
