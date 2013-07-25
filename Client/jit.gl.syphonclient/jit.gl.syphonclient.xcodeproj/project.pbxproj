@@ -59,7 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = maxmspsdk.xcconfig; sourceTree = "<group>"; };
+		1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = maxmspsdk.xcconfig; path = jit.gl.syphonclient/maxmspsdk.xcconfig; sourceTree = "<group>"; };
 		1B8F532D11CFB4FE009968B9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		1B8F534311CFB545009968B9 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "/SVNRepositories/Syphon Implementations/Jitter/c74support/max-includes/MaxAPI.framework"; sourceTree = "<absolute>"; };
 		1B8F534511CFB558009968B9 /* JitterAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JitterAPI.framework; path = "/SVNRepositories/Syphon Implementations/Jitter/c74support/jit-includes/JitterAPI.framework"; sourceTree = "<absolute>"; };
@@ -95,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */,
+				1BD15DD717A192B70014A7AB /* xcconfig */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				089C1671FE841209C02AAC07 /* Linked Frameworks */,
@@ -133,6 +134,7 @@
 				1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonclient.m */,
 			);
 			name = Source;
+			path = jit.gl.syphonclient;
 			sourceTree = "<group>";
 		};
 		19C28FB6FE9D52B211CA2CBB /* Products */ = {
@@ -141,6 +143,13 @@
 				8D576316048677EA00EA77CD /* jit.gl.syphonclient.mxo */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1BD15DD717A192B70014A7AB /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = xcconfig;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +279,8 @@
 			baseConfigurationReference = 1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = i386;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				C74SUPPORT = "$(SRCROOT)/../../c74support";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,7 +307,8 @@
 			baseConfigurationReference = 1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = i386;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				C74SUPPORT = "$(SRCROOT)/../../c74support";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -317,28 +328,28 @@
 		1DEB911F08733D790010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = "";
-				VALID_ARCHS = i386;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx10.7;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
 		1DEB912008733D790010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = "";
-				VALID_ARCHS = i386;
+				SDKROOT = macosx10.7;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};

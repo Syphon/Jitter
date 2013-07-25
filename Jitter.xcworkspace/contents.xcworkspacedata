@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Server/jit.gl.syphonserver/jit.gl.syphonserver.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Client/jit.gl.syphonclient/jit.gl.syphonclient.xcodeproj">
+   </FileRef>
+</Workspace>
