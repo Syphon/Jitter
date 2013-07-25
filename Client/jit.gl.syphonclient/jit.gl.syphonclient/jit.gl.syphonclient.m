@@ -54,7 +54,7 @@ typedef struct _jit_gl_syphon_client
 	SyphonNameboundClient* syClient;
 
 	NSRect latestBounds;
-	long dim[2];			// output dim
+	t_atom_long dim[2];			// output dim
 	BOOL needsRedraw;
 
 	// internal jit.gl.texture object
@@ -348,7 +348,7 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			jit_gl_syphon_client_instance->latestBounds.size = [frame textureSize];
             
 			// we need to update our internal texture to the latest known size of our syphonservers image.
-            long newdim[2];			// output dim
+            t_atom_long newdim[2];			// output dim
 
 			newdim[0] = jit_gl_syphon_client_instance->latestBounds.size.width;
 			newdim[1] = jit_gl_syphon_client_instance->latestBounds.size.height;
