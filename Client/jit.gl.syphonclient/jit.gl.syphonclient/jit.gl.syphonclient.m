@@ -210,7 +210,7 @@ t_jit_gl_syphon_client *jit_gl_syphon_client_new(t_symbol * dest_name)
 	t_jit_gl_syphon_client *jit_gl_syphon_client_instance;
 	
 	// make jit object
-	if (jit_gl_syphon_client_instance = (t_jit_gl_syphon_client *)jit_object_alloc(_jit_gl_syphon_client_class)) 
+	if ((jit_gl_syphon_client_instance = (t_jit_gl_syphon_client *)jit_object_alloc(_jit_gl_syphon_client_class)))
 	{
 		// TODO : is this right ? 
 		// set up attributes
