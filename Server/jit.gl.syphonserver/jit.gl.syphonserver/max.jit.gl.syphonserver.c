@@ -45,7 +45,7 @@ void max_jit_gl_syphon_server_free(t_max_jit_gl_syphon_server *x);
 
 t_class *max_jit_gl_syphon_server_class;
 
-void main(void)
+int C74_EXPORT main(void)
 {	
 	void *classex, *jitclass;
 	
@@ -91,7 +91,7 @@ void *max_jit_gl_syphon_server_new(t_symbol *s, long argc, t_atom *argv)
 	long attrstart;
 	t_symbol *dest_name_sym = _jit_sym_nothing;
 	
-	if (x = (t_max_jit_gl_syphon_server *) max_jit_obex_new(max_jit_gl_syphon_server_class, gensym("jit_gl_syphon_server"))) 
+	if ((x = (t_max_jit_gl_syphon_server *) max_jit_obex_new(max_jit_gl_syphon_server_class, gensym("jit_gl_syphon_server")))) 
 	{
 		// get first normal arg, the destination name
 		attrstart = max_jit_attr_args_offset(argc,argv);
@@ -101,7 +101,7 @@ void *max_jit_gl_syphon_server_new(t_symbol *s, long argc, t_atom *argv)
 		}
 		
 		// instantiate Jitter object with dest_name arg
-		if (jit_ob = jit_object_new(gensym("jit_gl_syphon_server"), dest_name_sym)) 
+		if ((jit_ob = jit_object_new(gensym("jit_gl_syphon_server"), dest_name_sym)))
 		{
 			// set internal jitter object instance
 			max_jit_obex_jitob_set(x, jit_ob);

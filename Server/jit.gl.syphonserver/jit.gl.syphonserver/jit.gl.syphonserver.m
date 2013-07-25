@@ -183,7 +183,7 @@ t_jit_gl_syphon_server *jit_gl_syphon_server_new(t_symbol * dest_name)
 	t_jit_gl_syphon_server *jit_gl_syphon_server_instance = NULL;
 	
 	// make jit object
-	if (jit_gl_syphon_server_instance = (t_jit_gl_syphon_server *)jit_object_alloc(_jit_gl_syphon_server_class)) 
+	if ((jit_gl_syphon_server_instance = (t_jit_gl_syphon_server *)jit_object_alloc(_jit_gl_syphon_server_class)))
 	{
 		post("Attach OB3D");
 
@@ -434,7 +434,7 @@ t_jit_err jit_gl_syphon_server_servername(t_jit_gl_syphon_server *jit_gl_syphon_
 {
 	t_symbol *srvname;
 
-	if(jit_gl_syphon_server_instance)
+	if(jit_gl_syphon_server_instance && jit_gl_syphon_server_instance->syServer)
 	{	
 		//post("have server");
 
@@ -447,7 +447,7 @@ t_jit_err jit_gl_syphon_server_servername(t_jit_gl_syphon_server *jit_gl_syphon_
 		else
 		{
 			// no args, set to zero
-			jit_gl_syphon_server_instance->servername = gensym("jig.gl.syphonserver");
+			jit_gl_syphon_server_instance->servername = gensym("jit.gl.syphonserver");
 		}
 		
 		// set the servers name to 
