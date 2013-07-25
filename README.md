@@ -13,21 +13,25 @@ jit.gl.syphonclient - brings frames from other applications into Jitter.
 jit.gl.syphonserver - allows jit.matrices and jit.gl.textures to be named and published to the system, so that other applications which support Syphon can use them.
 
 Licensing
+===
 
 Syphon for Jitter is published under a Simplified BSD license. See the included License.txt file.
 
 Requirements
+===
 
 Mac OS X 10.6.4 or greater
-Max 5.1.4 or greater
+Max 6.1 or greater
 
 Installation
+===
 
-Jit.gl.syphonclient.mxo & jit.gl.syphonserver.mxo and included help files (.maxhelp) should all be installed into a file path that Max 5 can see. Normally this means ensuring that you have a file path entry in the Max 5 Options -> File Preferences menu option.
+Jit.gl.syphonclient.mxo & jit.gl.syphonserver.mxo and included help files (.maxhelp) should all be installed into a file path that Max can see.
 
-It is recommended to make a new folder for 3rd party externals, so as to not contaminate the existing Max 5 patches and examples folder.
+We now distribute the externals as a Package for Max 6, so simply move the "Syphon" package folder to your Max Applications "packages" and all help files, examples, and externals should be automatically added to the Max search path.
 
 Instructions
+===
 
 Syphon for Jitter relies on OpenGL, since the Syphon Framework is hardware (GPU) accelerated. These are the same requirements when using any standard jitter opengl object. When using both the client and the server:
 
