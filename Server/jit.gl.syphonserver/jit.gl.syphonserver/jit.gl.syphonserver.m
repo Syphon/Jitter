@@ -404,8 +404,6 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 														   textureDimensions:NSMakeSize(width, height)
 																	 flipped:flip];
 				[pool drain];
-				
-				glPopClientAttrib();
 			}
 		}
 		
