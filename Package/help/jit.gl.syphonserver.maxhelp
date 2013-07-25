@@ -8,7 +8,7 @@
 			"architecture" : "x64"
 		}
 ,
-		"rect" : [ 704.0, 122.0, 809.0, 722.0 ],
+		"rect" : [ 1341.0, 52.0, 809.0, 722.0 ],
 		"bgcolor" : [ 0.333333, 0.333333, 0.333333, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -193,8 +193,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 618.0, 609.0, 165.0, 20.0 ],
-					"text" : "jit.gl.syphonserver 1.0 Beta 1"
+					"patching_rect" : [ 631.0, 636.20929, 165.0, 20.0 ],
+					"text" : "jit.gl.syphonserver 1.0 Beta 3"
 				}
 
 			}
@@ -207,7 +207,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 515.0, 675.0, 265.0, 20.0 ],
+					"patching_rect" : [ 531.0, 693.0, 265.0, 20.0 ],
 					"text" : "Copyright Tom Butterworth & Anton Marini, 2010"
 				}
 
@@ -236,7 +236,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 662.0, 653.0, 121.0, 20.0 ],
+					"patching_rect" : [ 674.708984, 674.069763, 121.0, 20.0 ],
 					"text" : "Licensed under BSD"
 				}
 
@@ -250,7 +250,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 652.0, 631.0, 131.0, 20.0 ],
+					"patching_rect" : [ 665.0, 655.139526, 131.0, 20.0 ],
 					"text" : "http://syphon.v002.info"
 				}
 

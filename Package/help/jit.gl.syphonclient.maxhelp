@@ -3,8 +3,9 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 6,
-			"minor" : 0,
-			"revision" : 0
+			"minor" : 1,
+			"revision" : 1,
+			"architecture" : "x64"
 		}
 ,
 		"rect" : [ 471.0, 44.0, 809.0, 722.0 ],
@@ -31,12 +32,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-27",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 145.0, 491.0, 191.0, 20.0 ],
-					"presentation_rect" : [ 145.0, 491.0, 0.0, 0.0 ],
 					"text" : "jit.gl.syphonclient supports alpha. "
 				}
 
@@ -89,12 +90,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-31",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 582.375671, 518.023987, 217.0, 48.0 ],
+					"patching_rect" : [ 582.375671, 518.023987, 217.0, 47.0 ],
 					"text" : "Make sure to use @blend_enable 1 to properly composite images with alpha/mask/keys."
 				}
 
@@ -131,12 +133,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-25",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 627.0, 605.0, 162.0, 20.0 ],
-					"text" : "jit.gl.syphonclient 1.0 Beta 1"
+					"patching_rect" : [ 637.0, 640.0, 162.0, 20.0 ],
+					"text" : "jit.gl.syphonclient 1.0 Beta 3"
 				}
 
 			}
@@ -174,11 +177,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-37",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 555.0, 664.0, 234.0, 20.0 ],
+					"patching_rect" : [ 565.0, 697.0, 234.0, 20.0 ],
 					"text" : "Copyright Tom Butterworth & Anton Marini"
 				}
 
@@ -188,11 +192,12 @@
 					"fontface" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 24.0,
+					"frgb" : 0.0,
 					"id" : "obj-36",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 29.272736, 28.909119, 255.0, 34.0 ],
+					"patching_rect" : [ 29.272736, 28.909119, 255.0, 33.0 ],
 					"text" : "jit.gl.syphonclient"
 				}
 
@@ -201,11 +206,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-34",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 668.0, 644.0, 121.0, 20.0 ],
+					"patching_rect" : [ 678.0, 678.0, 121.0, 20.0 ],
 					"text" : "Licensed under BSD"
 				}
 
@@ -214,11 +220,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-32",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 658.0, 625.0, 131.0, 20.0 ],
+					"patching_rect" : [ 668.0, 659.0, 131.0, 20.0 ],
 					"text" : "http://syphon.v002.info"
 				}
 
@@ -375,7 +382,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 111.875664, 617.0, 80.0, 36.0 ]
+					"patching_rect" : [ 111.875664, 617.0, 80.0, 35.0 ]
 				}
 
 			}
@@ -397,12 +404,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
+					"frgb" : 0.0,
 					"id" : "obj-28",
 					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.272736, 71.909119, 492.0, 103.0 ],
+					"patching_rect" : [ 31.272736, 71.909119, 492.0, 100.0 ],
 					"text" : "jit.gl.syphonclient outputs a jit.gl.texture based on the selected Syphon Server. You can query available servers by sending the \"getavailableservers\" message, which outputs a server name (the human readable) and the application name that is hosting the frame. \n\nYou can then send either the \"appname <ApplicationFoo>\" or the \"servername <ServerBar>\" messages to find the server and start outputting frames. The dim attribute is useful to ensure that you are displaying the frames in the proper aspect ratio."
 				}
 
@@ -524,8 +532,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 125.684296, 329.660461, 172.0, 20.0 ],
-					"text" : "jit.gl.syphonclient clientcontext"
+					"patching_rect" : [ 125.684296, 329.660461, 102.0, 20.0 ],
+					"text" : "jit.gl.syphonclient"
 				}
 
 			}
@@ -537,7 +545,7 @@
 					"maxclass" : "fpic",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 531.0, 22.0, 256.0, 253.0 ],
+					"patching_rect" : [ 542.0, 15.0, 256.0, 253.0 ],
 					"pic" : "syphon_client_help_image.png"
 				}
 
@@ -547,7 +555,6 @@
 					"background" : 1,
 					"bgcolor" : [ 0.952941, 0.952941, 0.94902, 1.0 ],
 					"id" : "obj-33",
-					"ignoreclick" : 1,
 					"maxclass" : "panel",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -561,7 +568,7 @@
 					"destination" : [ "obj-10", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 288.184296, 352.830231, 308.5, 352.830231 ],
+					"midpoints" : [ 218.184296, 352.830231, 308.5, 352.830231 ],
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -666,7 +673,7 @@
 					"destination" : [ "obj-4", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 159.375671, 576.155579, 121.375664, 576.155579 ],
+					"midpoints" : [ 159.375664, 576.155579, 121.375664, 576.155579 ],
 					"source" : [ "obj-19", 1 ]
 				}
 
