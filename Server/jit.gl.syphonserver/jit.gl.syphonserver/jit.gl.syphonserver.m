@@ -395,12 +395,6 @@ t_jit_err jit_gl_syphon_server_draw(t_jit_gl_syphon_server *jit_gl_syphon_server
 					
 			if(jit_gl_syphon_server_instance->syServer)
 			{	
-				// This is a temporary fix until we resolve the issue in a new Syphon Framework (Public Beta 3 or what not)
-				// Jitter uses multuple texture coordinate arrays on different units, and we (Syphon) erronously do not re-set  
-				// our internal Client Active Texture in the framework to GL_TEXTURE0, thus our texture coord array is not set.
-				glPushClientAttrib(GL_CLIENT_ALL_ATTRIB_BITS);
-				glClientActiveTexture(GL_TEXTURE0);
-
 				NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 				
 				// output our frame
