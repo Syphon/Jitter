@@ -68,7 +68,7 @@
 		1B8F573011D02E84009968B9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B8F574311D02EBD009968B9 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = System/Library/Frameworks/AGL.framework; sourceTree = SDKROOT; };
 		8D576316048677EA00EA77CD /* jit.gl.syphonclient.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.gl.syphonclient.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = jit.gl.syphonclient/Info.plist; sourceTree = "<group>"; };
 		BD48055A1239AC3700DFB19E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD62E65D12160D8200AC3170 /* SyphonNameboundClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyphonNameboundClient.h; path = ../../Shared/SyphonNameboundClient.h; sourceTree = SOURCE_ROOT; };
 		BD62E65E12160D8200AC3170 /* SyphonNameboundClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyphonNameboundClient.m; path = ../../Shared/SyphonNameboundClient.m; sourceTree = SOURCE_ROOT; };
@@ -94,7 +94,6 @@
 		089C166AFE841209C02AAC07 /* jit.gl.syphon */ = {
 			isa = PBXGroup;
 			children = (
-				1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */,
 				1BD15DD717A192B70014A7AB /* xcconfig */,
 				08FB77AFFE84173DC02AAC07 /* Source */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -148,6 +147,7 @@
 		1BD15DD717A192B70014A7AB /* xcconfig */ = {
 			isa = PBXGroup;
 			children = (
+				1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */,
 			);
 			name = xcconfig;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$PROJECT_DIR/../../../Syphon Framework/\"\nxcodebuild -configuration \"$CONFIGURATION\" ARCHS=\"$ARCHS\" VALID_ARCHS=\"$VALID_ARCHS\" OBJROOT=\"$OBJROOT\" SYMROOT=\"$SYMROOT\" GCC_PREPROCESSOR_DEFINITIONS=SYPHON_UNIQUE_CLASS_NAME_PREFIX=SyphonJitterClient";
+			shellScript = "cd \"$PROJECT_DIR/../../Syphon-Framework/\"\nxcodebuild -configuration \"$CONFIGURATION\" ARCHS=\"$ARCHS\" VALID_ARCHS=\"$VALID_ARCHS\" OBJROOT=\"$OBJROOT\" SYMROOT=\"$SYMROOT\" GCC_PREPROCESSOR_DEFINITIONS=SYPHON_UNIQUE_CLASS_NAME_PREFIX=SyphonJitterClient";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -295,8 +295,9 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				GENERATE_PKGINFO_FILE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/jit.gl.syphonclient/Info.plist";
 				INSTALL_PATH = /;
+				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
 				PRODUCT_NAME = jit.gl.syphonclient;
 				WRAPPER_EXTENSION = mxo;
 			};
@@ -318,8 +319,9 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_PREFIX_HEADER = "$(C74SUPPORT)/max-includes/macho-gl-prefix.pch";
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/jit.gl.syphonclient/Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
 				PRODUCT_NAME = jit.gl.syphonclient;
 				WRAPPER_EXTENSION = mxo;
 			};
