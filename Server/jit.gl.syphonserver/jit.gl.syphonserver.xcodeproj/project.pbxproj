@@ -275,7 +275,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				C74SUPPORT = "$(SRCROOT)/../../c74support";
 				COPY_PHASE_STRIP = NO;
-				DSTROOT = "$(SRCROOT)/../../sdk-build/externals";
+				DSTROOT = "$(SRCROOT)/../../Package/externals";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../c74support/jit-includes\"",
@@ -309,7 +309,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				C74SUPPORT = "$(SRCROOT)/../../c74support";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DSTROOT = "$(SRCROOT)/../../sdk-build/externals";
+				DSTROOT = "$(SRCROOT)/../../Package/externals";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../c74support/jit-includes\"",
@@ -320,7 +320,7 @@
 				GCC_PREFIX_HEADER = "$(C74SUPPORT)/max-includes/macho-gl-prefix.pch";
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "$(SRCROOT)/jit.gl.syphonserver/Info.plist";
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = /;
 				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
 				PRODUCT_NAME = jit.gl.syphonserver;
 				SDKROOT = macosx10.7;

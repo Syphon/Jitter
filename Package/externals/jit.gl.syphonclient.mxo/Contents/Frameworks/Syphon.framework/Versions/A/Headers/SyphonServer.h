@@ -70,9 +70,9 @@ extern NSString * const SyphonServerOptionStencilBufferResolution;
  It is safe to access instances of this class across threads, except for those calls related to OpenGL: a call to bindToDrawFrameOfSize: must have returned before a call is made to unbindAndPublish, and these methods must be paired and called in order. You should not call the stop method while the FBO is bound.
  */
 
-@class SyphonJitterServerSyphonImage;
+@class SyphonJitterClientSyphonImage;
 
-@interface SyphonJitterServerSyphonServer : NSObject
+@interface SyphonJitterClientSyphonServer : NSObject
 {
 @private
  NSString *_name;
@@ -85,7 +85,7 @@ extern NSString * const SyphonServerOptionStencilBufferResolution;
 
  void *_surfaceRef;
  BOOL _pushPending;
- SyphonJitterServerSyphonImage *_surfaceTexture;
+ SyphonJitterClientSyphonImage *_surfaceTexture;
  GLuint _surfaceFBO;
 
     BOOL _wantsContextChanges;
@@ -189,7 +189,7 @@ YES if clients are currently attached, NO otherwise. If you generate frames freq
   
  @returns A SyphonImage representing the current output from the server. YOU ARE RESPONSIBLE FOR RELEASING THIS OBJECT when you are finished with it. 
  */
-- (SyphonJitterServerSyphonImage *)newFrameImage;
+- (SyphonJitterClientSyphonImage *)newFrameImage;
 
 /*! 
  Stops the server instance. In garbage-collected applications you must call this method prior to removing strong references to the server. In non-garbage-collected applications, use of this method is optional.
@@ -199,4 +199,4 @@ YES if clients are currently attached, NO otherwise. If you generate frames freq
 /** @} */
 @end
 
-@compatibility_alias SyphonServer SyphonJitterServerSyphonServer;
+@compatibility_alias SyphonServer SyphonJitterClientSyphonServer;

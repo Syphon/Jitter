@@ -34,7 +34,7 @@
  SyphonImage represents an image stored as an OpenGL texture of type GL_TEXTURE_RECTANGLE_ARB.
  */
 
-@interface SyphonJitterServerSyphonImage : NSObject {
+@interface SyphonJitterClientSyphonImage : NSObject {
 
 }
 
@@ -49,4 +49,4 @@
 @property (readonly) NSSize textureSize;
 @end
 
-@compatibility_alias SyphonImage SyphonJitterServerSyphonImage;
+@compatibility_alias SyphonImage SyphonJitterClientSyphonImage;

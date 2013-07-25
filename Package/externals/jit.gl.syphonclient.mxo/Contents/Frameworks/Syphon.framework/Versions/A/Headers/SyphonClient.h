@@ -31,7 +31,7 @@
 #import <Quartz/Quartz.h>
 #import <OpenGL/OpenGL.h>
 
-@class SyphonJitterServerSyphonImage;
+@class SyphonJitterClientSyphonImage;
 
 /*! 
  SyphonClient makes available frames from a remote SyphonServer. A client is created from a NSDictionary which describes the server. Typically this is obtained from the shared SyphonServerDirectory, or one of Syphon's notifications.
@@ -41,7 +41,7 @@
  It is safe to access instances of this class across threads.
  */
 
-@interface SyphonJitterServerSyphonClient : NSObject
+@interface SyphonJitterClientSyphonClient : NSObject
 {
 @private
  id _connectionManager;
@@ -58,7 +58,7 @@
  @returns A newly initialized SyphonClient object, or nil if a client could not be created.
 */
 
-- (id)initWithServerDescription:(NSDictionary *)description options:(NSDictionary *)options newFrameHandler:(void (^)(SyphonJitterServerSyphonClient *client))handler;
+- (id)initWithServerDescription:(NSDictionary *)description options:(NSDictionary *)options newFrameHandler:(void (^)(SyphonJitterClientSyphonClient *client))handler;
 
 /*!
  A client is valid if it has a working connection to a server. Once this returns NO, the SyphonClient will not yield any further frames.
@@ -85,7 +85,7 @@
  @param cgl_ctx The CGL context in which the SyphonImage will be valid.
  @returns A SyphonImage representing the live output from the server. YOU ARE RESPONSIBLE FOR RELEASING THIS OBJECT when you are finished with it.
  */
-- (SyphonJitterServerSyphonImage *)newFrameImageForContext:(CGLContextObj)cgl_ctx;
+- (SyphonJitterClientSyphonImage *)newFrameImageForContext:(CGLContextObj)cgl_ctx;
 
 /*!
  Stops the client from receiving any further frames from the server. In garbage-collected applications you must call this method prior to removing strong references to the client. In non-garbage-collected applications, use of this method is optional and releasing all references to the client has the same effect.
@@ -95,4 +95,4 @@
 
 @end
 
-@compatibility_alias SyphonClient SyphonJitterServerSyphonClient;
+@compatibility_alias SyphonClient SyphonJitterClientSyphonClient;
