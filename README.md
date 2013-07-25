@@ -1,4 +1,5 @@
-Syphon for Jitter, Public Beta 2
+
+Syphon for Jitter
 ===
 
 About
