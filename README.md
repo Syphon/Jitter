@@ -2,8 +2,6 @@
 Syphon for Jitter
 ===
 
-About
-
 Syphon is a system for sending video between applications. You can use it to send high resolution and high frame rate video, 3D textures and synthesized content between Max 5 / Jitter and other applications.
 
 Syphon for Jitter includes two externals, jit.gl.syphonclient & jit.gl.syphonserver. 
