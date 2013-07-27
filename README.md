@@ -6,9 +6,9 @@ Syphon is a system for sending video between applications. You can use it to sen
 
 Syphon for Jitter includes two externals, jit.gl.syphonclient & jit.gl.syphonserver. 
 
-jit.gl.syphonclient - brings frames from other applications into Jitter.
+* jit.gl.syphonclient - brings frames from other applications into Jitter.
 
-jit.gl.syphonserver - allows jit.matrices and jit.gl.textures to be named and published to the system, so that other applications which support Syphon can use them.
+* jit.gl.syphonserver - allows jit.matrices and jit.gl.textures to be named and published to the system, so that other applications which support Syphon can use them.
 
 Licensing
 ====
