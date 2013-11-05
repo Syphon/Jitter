@@ -59,15 +59,15 @@
 
 /* Begin PBXFileReference section */
 		1B8F532D11CFB4FE009968B9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		1B8F534311CFB545009968B9 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../c74support/max-includes/MaxAPI.framework"; sourceTree = SOURCE_ROOT; };
-		1B8F534511CFB558009968B9 /* JitterAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JitterAPI.framework; path = "../../c74support/jit-includes/JitterAPI.framework"; sourceTree = SOURCE_ROOT; };
+		1B8F534311CFB545009968B9 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "../../max6-sdk/c74support/max-includes/MaxAPI.framework"; sourceTree = SOURCE_ROOT; };
+		1B8F534511CFB558009968B9 /* JitterAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JitterAPI.framework; path = "../../max6-sdk/c74support/jit-includes/JitterAPI.framework"; sourceTree = SOURCE_ROOT; };
 		1B8F534811CFB5AE009968B9 /* jit.gl.syphonserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = jit.gl.syphonserver.m; path = jit.gl.syphonserver/jit.gl.syphonserver.m; sourceTree = "<group>"; };
 		1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonserver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = max.jit.gl.syphonserver.c; path = jit.gl.syphonserver/max.jit.gl.syphonserver.c; sourceTree = "<group>"; };
 		1B8F573011D02E84009968B9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B8F574311D02EBD009968B9 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = System/Library/Frameworks/AGL.framework; sourceTree = SDKROOT; };
-		1BD15DD517A180740014A7AB /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = maxmspsdk.xcconfig; path = jit.gl.syphonserver/maxmspsdk.xcconfig; sourceTree = "<group>"; };
+		1BD15DD517A180740014A7AB /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = maxmspsdk.xcconfig; path = "../../Jitter-Common/maxmspsdk.xcconfig"; sourceTree = "<group>"; };
 		8D576316048677EA00EA77CD /* jit.gl.syphonserver.mxo */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = jit.gl.syphonserver.mxo; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = jit.gl.syphonserver/Info.plist; sourceTree = "<group>"; };
+		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../Jitter-Common/Info.plist"; sourceTree = "<group>"; };
 		BD4806501239AE9600DFB19E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Syphon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -272,31 +272,19 @@
 			baseConfigurationReference = 1BD15DD517A180740014A7AB /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				C74SUPPORT = "$(SRCROOT)/../../c74support";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = "$(SRCROOT)/../../Package/externals";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../c74support/jit-includes\"",
-					"\"$(CONFIGURATION_BUILD_DIR)\"",
-				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G4;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREFIX_HEADER = "$(C74SUPPORT)/max-includes/macho-gl-prefix.pch";
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				GENERATE_PKGINFO_FILE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/jit.gl.syphonserver/Info.plist";
 				INSTALL_PATH = /;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
 				PRODUCT_NAME = jit.gl.syphonserver;
-				SDKROOT = macosx10.7;
-				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = mxo;
 			};
 			name = Debug;
@@ -306,25 +294,14 @@
 			baseConfigurationReference = 1BD15DD517A180740014A7AB /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				C74SUPPORT = "$(SRCROOT)/../../c74support";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DSTROOT = "$(SRCROOT)/../../Package/externals";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../c74support/jit-includes\"",
-					"\"$(CONFIGURATION_BUILD_DIR)\"",
-				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_MODEL_TUNING = G4;
-				GCC_PREFIX_HEADER = "$(C74SUPPORT)/max-includes/macho-gl-prefix.pch";
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "$(SRCROOT)/jit.gl.syphonserver/Info.plist";
 				INSTALL_PATH = /;
 				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
 				PRODUCT_NAME = jit.gl.syphonserver;
-				SDKROOT = macosx10.7;
-				VALID_ARCHS = "i386 x86_64";
 				WRAPPER_EXTENSION = mxo;
 			};
 			name = Release;
@@ -339,8 +316,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -354,7 +331,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;

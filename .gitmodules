@@ -4,3 +4,6 @@
 [submodule "Shared"]
 	path = Shared
 	url = https://github.com/Syphon/Shared.git
+[submodule "max6-sdk"]
+	path = max6-sdk
+	url = git@github.com:Cycling74/max6-sdk.git
