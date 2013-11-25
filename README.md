@@ -24,9 +24,7 @@ Max 6.1 or greater
 Installation
 ====
 
-Jit.gl.syphonclient.mxo & jit.gl.syphonserver.mxo and included help files (.maxhelp) should all be installed into a file path that Max can see.
-
-We now distribute the externals as a Package for Max 6, so simply move the "Syphon" package folder to your Max Applications "packages" and all help files, examples, and externals should be automatically added to the Max search path.
+We now distribute the externals as a Package for Max 6, so simply move the "Syphon" package folder to your Max Applications "packages" and all help files, examples, and externals will be automatically added to the Max search path.
 
 Instructions
 ====
@@ -36,6 +34,9 @@ Syphon for Jitter relies on OpenGL, since the Syphon Framework is hardware (GPU)
 1. You need to ensure you have a properly set up jit.gl.render and destination (usually a jit.window) to ensure a valid rendering context
 
 2. You need to ensure that your syphon object (both client and server) are set to use this context.
+
+Changes since r2
+- Support for latest versions of Max, including 64-bit support.
 
 Changes since Public Beta 2
 - Fix for crash when excluding servername attribute
