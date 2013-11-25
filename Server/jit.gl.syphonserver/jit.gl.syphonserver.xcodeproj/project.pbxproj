@@ -344,7 +344,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "Build Custom Framework";
 				VALID_ARCHS = "i386 x86_64";
 			};
