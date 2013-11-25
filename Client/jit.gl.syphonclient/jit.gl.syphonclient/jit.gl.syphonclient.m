@@ -329,8 +329,10 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 		// this means we need to render into our internal texture, via an FBO.
 		// for now, we are going to do this all inline, in place.
 		
+        SyphonImage *frame = [client newFrameImageForContext:CGLGetCurrentContext()];
+        
 		// clearly we need our texture for this...
-		if(jit_gl_syphon_client_instance->output)
+		if(jit_gl_syphon_client_instance->output && frame)
 		{
 			jit_gl_syphon_client_instance->needsRedraw = NO;
 
@@ -344,7 +346,7 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			
             // Bind the Syphon Texture early, so we can base the viewport on the framesize and update our internal texture
             // ahead of rendering.
-			SyphonImage *frame = [client newFrameImageForContext:CGLGetCurrentContext()];
+			
 			jit_gl_syphon_client_instance->latestBounds.size = [frame textureSize];
             
 			// we need to update our internal texture to the latest known size of our syphonservers image.
@@ -471,10 +473,6 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 
 				glMatrixMode(previousMatrixMode);
 				
-				// clean up after ourselves
-				glDeleteFramebuffers(1, &tempFBO);
-				tempFBO = 0;
-				
 				// Is this needed? 
 				//glFlushRenderAPPLE();	
 			}
@@ -482,6 +480,10 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			{
 				post("jit.gl.syphonclient could not attach to FBO");
 			}
+            
+            // clean up after ourselves
+            glDeleteFramebuffers(1, &tempFBO);
+            tempFBO = 0;
 			
 			glPopAttrib();
 			glPopClientAttrib();			
@@ -489,11 +491,11 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 			glBindFramebufferEXT(GL_FRAMEBUFFER_EXT, previousFBO);	
 			glBindFramebufferEXT(GL_READ_FRAMEBUFFER_EXT, previousReadFBO);
 			glBindFramebufferEXT(GL_DRAW_FRAMEBUFFER_EXT, previousDrawFBO);			
-			
-			[frame release];
-			
+            
 			jit_gl_set_context(ctx);
 		}
+        
+        [frame release];
 	}
 	[jit_gl_syphon_client_instance->syClient unlockClient];
 	[pool drain];
