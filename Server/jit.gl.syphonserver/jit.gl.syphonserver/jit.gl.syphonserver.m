@@ -178,15 +178,11 @@ t_jit_err jit_gl_syphon_server_init(void)
 
 t_jit_gl_syphon_server *jit_gl_syphon_server_new(t_symbol * dest_name)
 {
-	post("New Server");
-	
 	t_jit_gl_syphon_server *jit_gl_syphon_server_instance = NULL;
 	
 	// make jit object
 	if ((jit_gl_syphon_server_instance = (t_jit_gl_syphon_server *)jit_object_alloc(_jit_gl_syphon_server_class)))
 	{
-		post("Attach OB3D");
-
 		// create and attach ob3d
 		jit_ob3d_new(jit_gl_syphon_server_instance, dest_name);
 
@@ -194,15 +190,11 @@ t_jit_gl_syphon_server *jit_gl_syphon_server_new(t_symbol * dest_name)
 		// set up attributes
 		jit_attr_setsym(jit_gl_syphon_server_instance->servername, _jit_sym_name, gensym("servername"));
 
-		post("Create Texture");
-
 		// instantiate a single internal jit.gl.texture should we need it.
 		jit_gl_syphon_server_instance->texture = jit_object_new(ps_jit_gl_texture,jit_attr_getsym(jit_gl_syphon_server_instance,ps_drawto));
 		
 		if (jit_gl_syphon_server_instance->texture)
 		{
-			post("Setup Texture");
-
 			// set texture attributes.
 			t_symbol *name =  jit_symbol_unique();
 			jit_attr_setsym(jit_gl_syphon_server_instance->texture,_jit_sym_name,name);
