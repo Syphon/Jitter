@@ -194,7 +194,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 1DEB911E08733D790010E9CD /* Build configuration list for PBXProject "jit.gl.syphonclient" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -279,6 +279,7 @@
 			baseConfigurationReference = 1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = "$(SRCROOT)/../../Package/externals";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -301,6 +302,7 @@
 			baseConfigurationReference = 1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DSTROOT = "$(SRCROOT)/../../Package/externals";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
