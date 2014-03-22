@@ -28,7 +28,6 @@
 		1B8F541B11CFCF98009968B9 /* max.jit.gl.syphonserver.c in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonserver.c */; };
 		1B8F573111D02E84009968B9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F573011D02E84009968B9 /* Cocoa.framework */; };
 		1B8F574411D02EBD009968B9 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F574311D02EBD009968B9 /* AGL.framework */; };
-		1BD15DD617A180740014A7AB /* maxmspsdk.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1BD15DD517A180740014A7AB /* maxmspsdk.xcconfig */; };
 		BD48065B1239AEAA00DFB19E /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD4806501239AE9600DFB19E /* Syphon.framework */; };
 		BD48065C1239AEB100DFB19E /* Syphon.framework in Copy Syphon Framework */ = {isa = PBXBuildFile; fileRef = BD4806501239AE9600DFB19E /* Syphon.framework */; };
 /* End PBXBuildFile section */
@@ -187,7 +186,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 1DEB911E08733D790010E9CD /* Build configuration list for PBXProject "jit.gl.syphonserver" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -214,7 +213,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BD15DD617A180740014A7AB /* maxmspsdk.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +270,7 @@
 			baseConfigurationReference = 1BD15DD517A180740014A7AB /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = "$(SRCROOT)/../../Package/externals";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -294,6 +293,7 @@
 			baseConfigurationReference = 1BD15DD517A180740014A7AB /* maxmspsdk.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DSTROOT = "$(SRCROOT)/../../Package/externals";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
