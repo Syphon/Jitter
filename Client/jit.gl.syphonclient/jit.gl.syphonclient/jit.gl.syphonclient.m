@@ -247,7 +247,7 @@ t_jit_gl_syphon_client *jit_gl_syphon_client_new(t_symbol * dest_name)
 		
 		// create and attach ob3d
 		jit_ob3d_new(jit_gl_syphon_client_instance, dest_name);
-		jit_gl_syphon_client_instance->syClient = [[SyphonNameboundClient alloc] init];
+        jit_gl_syphon_client_instance->syClient = [[SyphonNameboundClient alloc] initWithContext:CGLGetCurrentContext()];
 	} 
 	else 
 	{
@@ -329,7 +329,7 @@ t_jit_err jit_gl_syphon_client_draw(t_jit_gl_syphon_client *jit_gl_syphon_client
 		// this means we need to render into our internal texture, via an FBO.
 		// for now, we are going to do this all inline, in place.
 		
-        SyphonImage *frame = [client newFrameImageForContext:CGLGetCurrentContext()];
+        SyphonImage *frame = [client newFrameImage];
         
 		// clearly we need our texture for this...
 		if(jit_gl_syphon_client_instance->output && frame)
