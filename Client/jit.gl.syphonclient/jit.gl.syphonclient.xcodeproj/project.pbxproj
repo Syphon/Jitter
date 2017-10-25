@@ -22,8 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		1B8F532E11CFB4FE009968B9 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F532D11CFB4FE009968B9 /* OpenGL.framework */; };
-		1B8F534411CFB545009968B9 /* MaxAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F534311CFB545009968B9 /* MaxAPI.framework */; };
-		1B8F534611CFB558009968B9 /* JitterAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F534511CFB558009968B9 /* JitterAPI.framework */; };
 		1B8F534911CFB5AE009968B9 /* jit.gl.syphonclient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F534811CFB5AE009968B9 /* jit.gl.syphonclient.m */; };
 		1B8F541B11CFCF98009968B9 /* max.jit.gl.syphonclient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonclient.m */; };
 		1B8F573111D02E84009968B9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8F573011D02E84009968B9 /* Cocoa.framework */; };
@@ -61,8 +59,6 @@
 /* Begin PBXFileReference section */
 		1B8F52D111CFB3B6009968B9 /* maxmspsdk.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = maxmspsdk.xcconfig; path = "../../Jitter-Common/maxmspsdk.xcconfig"; sourceTree = "<group>"; };
 		1B8F532D11CFB4FE009968B9 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		1B8F534311CFB545009968B9 /* MaxAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaxAPI.framework; path = "/Users/vade/Documents/Repositories/Syphon/Jitter/c74support/max-includes/MaxAPI.framework"; sourceTree = "<absolute>"; };
-		1B8F534511CFB558009968B9 /* JitterAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JitterAPI.framework; path = "/Users/vade/Documents/Repositories/Syphon/Jitter/c74support/jit-includes/JitterAPI.framework"; sourceTree = "<absolute>"; };
 		1B8F534811CFB5AE009968B9 /* jit.gl.syphonclient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jit.gl.syphonclient.m; sourceTree = "<group>"; };
 		1B8F541A11CFCF98009968B9 /* max.jit.gl.syphonclient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = max.jit.gl.syphonclient.m; sourceTree = "<group>"; };
 		1B8F573011D02E84009968B9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -81,8 +77,6 @@
 			files = (
 				BD48056E1239AC8200DFB19E /* Syphon.framework in Frameworks */,
 				1B8F532E11CFB4FE009968B9 /* OpenGL.framework in Frameworks */,
-				1B8F534411CFB545009968B9 /* MaxAPI.framework in Frameworks */,
-				1B8F534611CFB558009968B9 /* JitterAPI.framework in Frameworks */,
 				1B8F573111D02E84009968B9 /* Cocoa.framework in Frameworks */,
 				1B8F574411D02EBD009968B9 /* AGL.framework in Frameworks */,
 			);
@@ -106,8 +100,6 @@
 		089C1671FE841209C02AAC07 /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1B8F534511CFB558009968B9 /* JitterAPI.framework */,
-				1B8F534311CFB545009968B9 /* MaxAPI.framework */,
 				1B8F532D11CFB4FE009968B9 /* OpenGL.framework */,
 				1B8F573011D02E84009968B9 /* Cocoa.framework */,
 				1B8F574311D02EBD009968B9 /* AGL.framework */,
@@ -291,7 +283,6 @@
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				GENERATE_PKGINFO_FILE = YES;
 				INSTALL_PATH = /;
-				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
 				PRODUCT_NAME = jit.gl.syphonclient;
 				WRAPPER_EXTENSION = mxo;
 			};
@@ -309,7 +300,6 @@
 				GCC_MODEL_TUNING = G4;
 				GCC_VERSION = "";
 				INSTALL_PATH = /;
-				OTHER_LDFLAGS = "$(C74_SYM_LINKER_FLAGS)";
 				PRODUCT_NAME = jit.gl.syphonclient;
 				WRAPPER_EXTENSION = mxo;
 			};

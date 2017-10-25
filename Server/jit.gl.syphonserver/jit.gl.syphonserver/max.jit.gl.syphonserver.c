@@ -29,7 +29,6 @@
 
 #include "jit.common.h"
 #include "jit.gl.h"
-#include "ext_obex.h"
 
 
 typedef struct _max_jit_gl_syphon_server 

@@ -29,7 +29,6 @@
 
 #include "jit.common.h"
 #include "jit.gl.h"
-#include "ext_obex.h"
 
 #import <Syphon/Syphon.h>
 
