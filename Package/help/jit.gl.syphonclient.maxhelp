@@ -2,42 +2,51 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 6,
-			"minor" : 1,
-			"revision" : 1,
-			"architecture" : "x64"
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 4,
+			"architecture" : "x86",
+			"modernui" : 1
 		}
 ,
-		"rect" : [ 471.0, 44.0, 809.0, 722.0 ],
+		"rect" : [ 198.0, 129.0, 809.0, 722.0 ],
 		"bgcolor" : [ 0.333333, 0.333333, 0.333333, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 0,
+		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 0,
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
-		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-27",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 145.0, 491.0, 191.0, 20.0 ],
+					"style" : "",
 					"text" : "jit.gl.syphonclient supports alpha. "
 				}
 
@@ -51,7 +60,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 236.0, 375.0, 34.0, 20.0 ],
+					"patching_rect" : [ 236.0, 375.0, 34.0, 22.0 ],
+					"style" : "",
 					"text" : "t 0 0"
 				}
 
@@ -66,7 +76,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "int" ],
-					"patching_rect" : [ 377.875671, 50.114838, 34.0, 20.0 ],
+					"patching_rect" : [ 377.875671, 50.114838, 34.0, 22.0 ],
+					"style" : "",
 					"text" : "t b 1"
 				}
 
@@ -81,7 +92,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 377.875671, 26.114838, 60.0, 20.0 ],
+					"patching_rect" : [ 377.875671, 26.114838, 60.0, 22.0 ],
+					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -90,13 +102,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-31",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 582.375671, 518.023987, 217.0, 47.0 ],
+					"style" : "",
 					"text" : "Make sure to use @blend_enable 1 to properly composite images with alpha/mask/keys."
 				}
 
@@ -110,7 +122,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 332.0, 545.476135, 127.0, 18.0 ],
+					"patching_rect" : [ 332.0, 545.476135, 127.0, 22.0 ],
+					"style" : "",
 					"text" : "erase_color 0. 0. 0. 1."
 				}
 
@@ -124,7 +137,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 195.0, 545.476135, 127.0, 18.0 ],
+					"patching_rect" : [ 195.0, 545.476135, 127.0, 22.0 ],
+					"style" : "",
 					"text" : "erase_color 1. 0. 0. 1."
 				}
 
@@ -133,13 +147,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-25",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 637.0, 640.0, 162.0, 20.0 ],
-					"text" : "jit.gl.syphonclient 1.0 Beta 3"
+					"patching_rect" : [ 687.0, 640.0, 112.0, 20.0 ],
+					"style" : "",
+					"text" : "jit.gl.syphonclient 4"
 				}
 
 			}
@@ -153,7 +167,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 565.0, 369.0, 37.0, 18.0 ],
+					"patching_rect" : [ 565.0, 369.0, 37.0, 22.0 ],
+					"style" : "",
 					"text" : "clear"
 				}
 
@@ -168,7 +183,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 565.0, 346.0, 60.0, 20.0 ],
+					"patching_rect" : [ 565.0, 346.0, 60.0, 22.0 ],
+					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -177,13 +193,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-37",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 565.0, 697.0, 234.0, 20.0 ],
-					"text" : "Copyright Tom Butterworth & Anton Marini"
+					"patching_rect" : [ 503.0, 697.0, 296.0, 20.0 ],
+					"style" : "",
+					"text" : "Copyright Tom Butterworth & Anton Marini, 2010-2017"
 				}
 
 			}
@@ -192,12 +208,12 @@
 					"fontface" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 24.0,
-					"frgb" : 0.0,
 					"id" : "obj-36",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 29.272736, 28.909119, 255.0, 33.0 ],
+					"style" : "",
 					"text" : "jit.gl.syphonclient"
 				}
 
@@ -206,12 +222,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-34",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 678.0, 678.0, 121.0, 20.0 ],
+					"style" : "",
 					"text" : "Licensed under BSD"
 				}
 
@@ -220,12 +236,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-32",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 668.0, 659.0, 131.0, 20.0 ],
+					"style" : "",
 					"text" : "http://syphon.v002.info"
 				}
 
@@ -239,7 +255,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "clear" ],
-					"patching_rect" : [ 422.0, 402.0, 43.0, 20.0 ],
+					"patching_rect" : [ 422.0, 402.0, 43.0, 22.0 ],
+					"style" : "",
 					"text" : "t clear"
 				}
 
@@ -253,7 +270,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 279.0, 299.818176, 47.0, 18.0 ],
+					"patching_rect" : [ 279.0, 299.818176, 47.0, 22.0 ],
+					"style" : "",
 					"text" : "getdim"
 				}
 
@@ -267,7 +285,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 489.0, 299.818176, 108.0, 20.0 ],
+					"patching_rect" : [ 489.0, 299.818176, 108.0, 22.0 ],
+					"style" : "",
 					"text" : "prepend appname"
 				}
 
@@ -281,16 +300,15 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 439.0, 430.0, 98.0, 20.0 ],
+					"patching_rect" : [ 439.0, 430.0, 98.0, 22.0 ],
+					"style" : "",
 					"text" : "prepend append"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"framecolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"allowdrag" : 0,
 					"id" : "obj-16",
 					"items" : "<empty>",
 					"maxclass" : "umenu",
@@ -298,7 +316,8 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 439.0, 455.0, 156.0, 20.0 ]
+					"patching_rect" : [ 439.0, 455.0, 156.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -311,16 +330,15 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 292.0, 428.0, 98.0, 20.0 ],
+					"patching_rect" : [ 292.0, 428.0, 98.0, 22.0 ],
+					"style" : "",
 					"text" : "prepend append"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 12.0,
-					"framecolor" : [ 1.0, 0.0, 0.0, 1.0 ],
+					"allowdrag" : 0,
 					"id" : "obj-11",
 					"items" : "<empty>",
 					"maxclass" : "umenu",
@@ -328,7 +346,8 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 292.0, 455.0, 142.0, 20.0 ]
+					"patching_rect" : [ 292.0, 455.0, 142.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -341,7 +360,8 @@
 					"numinlets" : 5,
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 279.0, 377.0, 210.0, 20.0 ],
+					"patching_rect" : [ 279.0, 377.0, 210.0, 22.0 ],
+					"style" : "",
 					"text" : "route dim servername appname clear"
 				}
 
@@ -355,7 +375,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 357.0, 299.818176, 121.0, 20.0 ],
+					"patching_rect" : [ 357.0, 299.818176, 121.0, 22.0 ],
+					"style" : "",
 					"text" : "prepend servername"
 				}
 
@@ -368,13 +389,15 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 299.0, 356.0, 84.0, 20.0 ],
+					"patching_rect" : [ 299.0, 356.0, 84.0, 22.0 ],
+					"style" : "",
 					"text" : "print dumpout"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-21",
@@ -382,7 +405,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 111.875664, 617.0, 80.0, 35.0 ]
+					"patching_rect" : [ 111.875664, 617.0, 80.0, 35.0 ],
+					"style" : ""
 				}
 
 			}
@@ -395,7 +419,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 155.090942, 299.818176, 114.0, 18.0 ],
+					"patching_rect" : [ 155.090942, 299.818176, 114.0, 22.0 ],
+					"style" : "",
 					"text" : "getavailableservers"
 				}
 
@@ -404,13 +429,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-28",
 					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 31.272736, 71.909119, 492.0, 100.0 ],
+					"style" : "",
 					"text" : "jit.gl.syphonclient outputs a jit.gl.texture based on the selected Syphon Server. You can query available servers by sending the \"getavailableservers\" message, which outputs a server name (the human readable) and the application name that is hosting the frame. \n\nYou can then send either the \"appname <ApplicationFoo>\" or the \"servername <ServerBar>\" messages to find the server and start outputting frames. The dim attribute is useful to ensure that you are displaying the frames in the proper aspect ratio."
 				}
 
@@ -424,7 +449,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "erase", "bang" ],
-					"patching_rect" : [ 111.875664, 545.476135, 57.0, 20.0 ],
+					"patching_rect" : [ 111.875664, 545.476135, 57.0, 22.0 ],
+					"style" : "",
 					"text" : "t erase b"
 				}
 
@@ -436,7 +462,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 49.090912, 189.545456, 20.0, 20.0 ]
+					"patching_rect" : [ 49.090912, 189.545456, 20.0, 20.0 ],
+					"style" : ""
 				}
 
 			}
@@ -449,7 +476,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 125.684296, 518.023987, 452.0, 20.0 ],
+					"patching_rect" : [ 125.684296, 518.023987, 452.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.gl.videoplane clientcontext @blend_enable 1 @color 1 1 1 1 @transform_reset 2"
 				}
 
@@ -463,7 +491,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 111.875664, 249.203369, 34.0, 20.0 ],
+					"patching_rect" : [ 111.875664, 249.203369, 34.0, 22.0 ],
+					"style" : "",
 					"text" : "t b b"
 				}
 
@@ -476,7 +505,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 111.875664, 190.703354, 20.0, 20.0 ]
+					"patching_rect" : [ 111.875664, 190.703354, 20.0, 20.0 ],
+					"style" : ""
 				}
 
 			}
@@ -489,7 +519,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 111.875664, 587.835022, 140.0, 20.0 ],
+					"patching_rect" : [ 111.875664, 587.835022, 140.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.gl.render clientcontext"
 				}
 
@@ -503,7 +534,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 111.875664, 218.114838, 65.0, 20.0 ],
+					"patching_rect" : [ 111.875664, 218.114838, 65.0, 22.0 ],
+					"style" : "",
 					"text" : "qmetro 16"
 				}
 
@@ -517,7 +549,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 363.090942, 589.65564, 133.0, 20.0 ],
+					"patching_rect" : [ 363.090942, 589.65564, 133.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.window clientcontext"
 				}
 
@@ -532,7 +565,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_gl_texture", "" ],
-					"patching_rect" : [ 125.684296, 329.660461, 102.0, 20.0 ],
+					"patching_rect" : [ 125.684296, 329.660461, 102.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.gl.syphonclient"
 				}
 
@@ -544,7 +578,8 @@
 					"id" : "obj-35",
 					"maxclass" : "fpic",
 					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
 					"patching_rect" : [ 542.0, 15.0, 256.0, 253.0 ],
 					"pic" : "syphon_client_help_image.png"
 				}
@@ -552,13 +587,17 @@
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 0.952941, 0.952941, 0.94902, 1.0 ],
 					"id" : "obj-33",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.375671, 15.0, 783.0, 702.0 ]
+					"patching_rect" : [ 16.375671, 15.0, 783.0, 702.0 ],
+					"proportion" : 0.39,
+					"style" : ""
 				}
 
 			}
@@ -566,9 +605,8 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 218.184296, 352.830231, 308.5, 352.830231 ],
+					"order" : 0,
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -576,8 +614,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 135.184296, 433.842224, 135.184296, 433.842224 ],
 					"source" : [ "obj-1", 0 ]
 				}
@@ -586,8 +622,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-38", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
+					"order" : 2,
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -595,8 +630,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
+					"order" : 1,
 					"source" : [ "obj-1", 1 ]
 				}
 
@@ -604,8 +638,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 363.0, 489.0, 647.0, 489.0, 647.0, 283.0, 366.5, 283.0 ],
 					"source" : [ "obj-11", 1 ]
 				}
@@ -614,7 +646,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-30", 0 ],
-					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-13", 0 ]
 				}
@@ -623,8 +654,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-14", 0 ]
 				}
 
@@ -632,8 +661,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-15", 0 ]
 				}
 
@@ -641,8 +668,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 517.0, 483.0, 636.0, 483.0, 636.0, 290.0, 498.5, 290.0 ],
 					"source" : [ "obj-16", 1 ]
 				}
@@ -651,8 +676,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 498.5, 324.739319, 135.184296, 324.739319 ],
 					"source" : [ "obj-17", 0 ]
 				}
@@ -661,8 +684,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 164.590942, 324.739319, 135.184296, 324.739319 ],
 					"source" : [ "obj-18", 0 ]
 				}
@@ -671,9 +692,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"midpoints" : [ 159.375664, 576.155579, 121.375664, 576.155579 ],
+					"midpoints" : [ 159.375671, 576.155579, 121.375664, 576.155579 ],
 					"source" : [ "obj-19", 1 ]
 				}
 
@@ -681,8 +700,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 121.375664, 572.155579, 121.375664, 572.155579 ],
 					"source" : [ "obj-19", 0 ]
 				}
@@ -691,8 +708,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 288.5, 324.739319, 135.184296, 324.739319 ],
 					"source" : [ "obj-20", 0 ]
 				}
@@ -701,7 +716,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
-					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-22", 0 ]
 				}
@@ -710,8 +724,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 204.5, 576.91748, 121.375664, 576.91748 ],
 					"source" : [ "obj-23", 0 ]
 				}
@@ -720,8 +732,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
 					"hidden" : 1,
+					"order" : 1,
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -729,8 +741,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"disabled" : 0,
 					"hidden" : 1,
+					"order" : 0,
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -738,8 +750,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 341.5, 576.155579, 121.375664, 576.155579 ],
 					"source" : [ "obj-26", 0 ]
 				}
@@ -748,9 +758,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 431.5, 451.0, 301.5, 451.0 ],
+					"order" : 1,
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -758,9 +767,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 431.5, 451.0, 448.5, 451.0 ],
+					"order" : 0,
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -768,8 +776,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -777,7 +783,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-30", 0 ]
 				}
@@ -786,7 +791,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"disabled" : 0,
 					"hidden" : 1,
 					"source" : [ "obj-30", 1 ]
 				}
@@ -795,8 +799,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 245.5, 451.5, 301.5, 451.5 ],
 					"source" : [ "obj-38", 0 ]
 				}
@@ -805,8 +807,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 260.5, 451.5, 448.5, 451.5 ],
 					"source" : [ "obj-38", 1 ]
 				}
@@ -815,8 +815,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-4", 0 ]
 				}
 
@@ -824,8 +822,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 366.5, 324.739319, 135.184296, 324.739319 ],
 					"source" : [ "obj-5", 0 ]
 				}
@@ -834,8 +830,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 336.25, 413.5, 301.5, 413.5 ],
 					"source" : [ "obj-6", 1 ]
 				}
@@ -844,8 +838,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 384.0, 425.5, 448.5, 425.5 ],
 					"source" : [ "obj-6", 2 ]
 				}
@@ -854,8 +846,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-6", 3 ]
 				}
 
@@ -863,8 +853,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -872,8 +860,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-8", 1 ]
 				}
 
@@ -881,8 +867,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-8", 0 ]
 				}
 
@@ -890,8 +874,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-9", 0 ]
 				}
 
@@ -901,7 +883,8 @@
 				"name" : "jit.gl.syphonclient.mxo",
 				"type" : "iLaX"
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }

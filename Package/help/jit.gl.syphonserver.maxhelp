@@ -2,32 +2,41 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 6,
-			"minor" : 1,
-			"revision" : 1,
-			"architecture" : "x64"
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 4,
+			"architecture" : "x86",
+			"modernui" : 1
 		}
 ,
-		"rect" : [ 1341.0, 52.0, 809.0, 722.0 ],
+		"rect" : [ 973.0, 78.0, 809.0, 722.0 ],
 		"bgcolor" : [ 0.333333, 0.333333, 0.333333, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 0,
+		"gridonopen" : 1,
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 0,
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
 		"boxanimatetime" : 200,
-		"imprint" : 0,
 		"enablehscroll" : 1,
 		"enablevscroll" : 1,
 		"devicewidth" : 0.0,
 		"description" : "",
 		"digest" : "",
 		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
@@ -38,9 +47,10 @@
 					"minimum" : 2,
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "int", "bang" ],
+					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 159.0, 195.0, 50.0, 20.0 ]
+					"patching_rect" : [ 159.0, 195.0, 50.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -48,13 +58,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-9",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 306.0, 532.0, 363.0, 33.0 ],
+					"style" : "",
 					"text" : "Syphon does not rely on screen capture, so you can minimize and hide source windows and applications, and frames still flow."
 				}
 
@@ -68,7 +78,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 277.0, 570.0, 61.0, 18.0 ],
+					"patching_rect" : [ 277.0, 570.0, 61.0, 22.0 ],
+					"style" : "",
 					"text" : "visible $1"
 				}
 
@@ -81,7 +92,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 277.0, 542.0, 20.0, 20.0 ]
+					"patching_rect" : [ 277.0, 542.0, 20.0, 20.0 ],
+					"style" : ""
 				}
 
 			}
@@ -94,7 +106,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 264.0, 417.0, 165.0, 18.0 ],
+					"patching_rect" : [ 264.0, 417.0, 165.0, 22.0 ],
+					"style" : "",
 					"text" : "servername \"Syphon Server\""
 				}
 
@@ -103,12 +116,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-2",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 413.0, 321.0, 147.0, 20.0 ],
+					"style" : "",
 					"text" : "Just for display purposes."
 				}
 
@@ -117,13 +130,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-83",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 217.0, 185.0, 314.0, 60.0 ],
+					"style" : "",
 					"text" : "Note that the framerate you drive your jit.gl.syphonserver instance also controls the rendering speed of the attached clients. Lowering your framerate is beneficial to the whole system, as clients slow down as well."
 				}
 
@@ -132,12 +145,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-81",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 154.0, 387.0, 271.0, 20.0 ],
+					"style" : "",
 					"text" : "Change the human readable name for the frame."
 				}
 
@@ -146,12 +159,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-76",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 268.0, 278.0, 384.0, 20.0 ],
+					"style" : "",
 					"text" : "Create a matrix (you can also send the output of a jit.gl.texture object)."
 				}
 
@@ -165,7 +178,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 151.0, 417.0, 103.0, 18.0 ],
+					"patching_rect" : [ 151.0, 417.0, 103.0, 22.0 ],
+					"style" : "",
 					"text" : "servername Jitter"
 				}
 
@@ -179,7 +193,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 128.0, 278.0, 135.0, 20.0 ],
+					"patching_rect" : [ 128.0, 278.0, 135.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.noise 1 char 640 480"
 				}
 
@@ -188,13 +203,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-56",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 631.0, 636.20929, 165.0, 20.0 ],
-					"text" : "jit.gl.syphonserver 1.0 Beta 3"
+					"patching_rect" : [ 680.0, 636.20929, 116.0, 20.0 ],
+					"style" : "",
+					"text" : "jit.gl.syphonserver 4"
 				}
 
 			}
@@ -202,13 +217,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-37",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 531.0, 693.0, 265.0, 20.0 ],
-					"text" : "Copyright Tom Butterworth & Anton Marini, 2010"
+					"patching_rect" : [ 499.0, 693.0, 297.0, 20.0 ],
+					"style" : "",
+					"text" : "Copyright Tom Butterworth & Anton Marini, 2010-2017"
 				}
 
 			}
@@ -217,12 +232,12 @@
 					"fontface" : 1,
 					"fontname" : "Arial",
 					"fontsize" : 24.0,
-					"frgb" : 0.0,
 					"id" : "obj-36",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 30.0, 30.0, 255.0, 33.0 ],
+					"style" : "",
 					"text" : "jit.gl.syphonserver"
 				}
 
@@ -231,12 +246,12 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-34",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 674.708984, 674.069763, 121.0, 20.0 ],
+					"style" : "",
 					"text" : "Licensed under BSD"
 				}
 
@@ -245,18 +260,19 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-32",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 665.0, 655.139526, 131.0, 20.0 ],
+					"style" : "",
 					"text" : "http://syphon.v002.info"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontface" : 0,
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
 					"id" : "obj-21",
@@ -264,7 +280,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 113.0, 600.0, 80.0, 35.0 ]
+					"patching_rect" : [ 113.0, 600.0, 80.0, 35.0 ],
+					"style" : ""
 				}
 
 			}
@@ -272,13 +289,13 @@
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
-					"frgb" : 0.0,
 					"id" : "obj-28",
 					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 30.0, 75.0, 506.0, 87.0 ],
+					"style" : "",
 					"text" : "jit.gl.syphonserver publishes a jit.matrix or a jit.gl.texture to the system, which other Syphon Clients can then discover and display. Frames published by  jit.gl.syphonserver handle 32 bit ARGB images, (8 bits per channel) and properly respect alpha channel, so you can publish images with transparency/masks and keys applied with no issue. jit.gl.syphonserver's only configurable message is the servername message which is a descriptive human readable name describing the frame."
 				}
 
@@ -292,7 +309,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "erase", "bang" ],
-					"patching_rect" : [ 113.0, 539.0, 57.0, 20.0 ],
+					"patching_rect" : [ 113.0, 539.0, 57.0, 22.0 ],
+					"style" : "",
 					"text" : "t erase b"
 				}
 
@@ -304,7 +322,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 75.0, 195.0, 20.0, 20.0 ]
+					"patching_rect" : [ 75.0, 195.0, 20.0, 20.0 ],
+					"style" : ""
 				}
 
 			}
@@ -317,7 +336,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
-					"patching_rect" : [ 146.0, 321.0, 266.0, 20.0 ],
+					"patching_rect" : [ 146.0, 321.0, 266.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.gl.videoplane servercontext @blend_enable 1"
 				}
 
@@ -331,7 +351,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 113.0, 253.500015, 34.0, 20.0 ],
+					"patching_rect" : [ 113.0, 253.500015, 34.0, 22.0 ],
+					"style" : "",
 					"text" : "t b b"
 				}
 
@@ -344,7 +365,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 113.0, 195.0, 20.0, 20.0 ]
+					"patching_rect" : [ 113.0, 195.0, 20.0, 20.0 ],
+					"style" : ""
 				}
 
 			}
@@ -357,7 +379,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 113.0, 570.0, 145.0, 20.0 ],
+					"patching_rect" : [ 113.0, 570.0, 145.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.gl.render servercontext"
 				}
 
@@ -371,7 +394,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 113.0, 222.411484, 65.0, 20.0 ],
+					"patching_rect" : [ 113.0, 222.411484, 65.0, 22.0 ],
+					"style" : "",
 					"text" : "qmetro 16"
 				}
 
@@ -385,7 +409,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 277.0, 595.0, 197.0, 20.0 ],
+					"patching_rect" : [ 277.0, 595.0, 197.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.window servercontext @visible 0"
 				}
 
@@ -400,7 +425,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 128.0, 460.0, 107.0, 20.0 ],
+					"patching_rect" : [ 128.0, 460.0, 107.0, 22.0 ],
+					"style" : "",
 					"text" : "jit.gl.syphonserver"
 				}
 
@@ -412,7 +438,8 @@
 					"id" : "obj-35",
 					"maxclass" : "fpic",
 					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
 					"patching_rect" : [ 540.0, 15.0, 256.0, 253.0 ],
 					"pic" : "syphon_server_help_image.png"
 				}
@@ -420,13 +447,17 @@
 			}
 , 			{
 				"box" : 				{
+					"angle" : 0.0,
 					"background" : 1,
 					"bgcolor" : [ 0.952941, 0.952941, 0.94902, 1.0 ],
 					"id" : "obj-33",
 					"maxclass" : "panel",
+					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 15.0, 15.0, 781.0, 698.0 ]
+					"patching_rect" : [ 15.0, 15.0, 781.0, 698.0 ],
+					"proportion" : 0.39,
+					"style" : ""
 				}
 
 			}
@@ -434,8 +465,6 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-73", 1 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -443,8 +472,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-75", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 273.5, 447.0, 137.5, 447.0 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -453,8 +480,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -462,8 +487,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-72", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-67", 1 ]
 				}
 
@@ -471,8 +494,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-72", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-67", 0 ]
 				}
 
@@ -480,8 +501,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-70", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-68", 0 ]
 				}
 
@@ -489,8 +508,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-74", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-7", 0 ]
 				}
 
@@ -498,8 +515,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-67", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-70", 0 ]
 				}
 
@@ -507,8 +522,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-80", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-70", 1 ]
 				}
 
@@ -516,8 +529,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-73", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-71", 0 ]
 				}
 
@@ -525,8 +536,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-72", 0 ]
 				}
 
@@ -534,8 +543,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-70", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"source" : [ "obj-73", 0 ]
 				}
 
@@ -543,8 +550,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-75", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 160.5, 447.0, 137.5, 447.0 ],
 					"source" : [ "obj-77", 0 ]
 				}
@@ -553,9 +558,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-69", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 137.5, 312.5, 155.5, 312.5 ],
+					"order" : 0,
 					"source" : [ "obj-80", 0 ]
 				}
 
@@ -563,9 +567,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-75", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
 					"midpoints" : [ 137.5, 309.5, 137.5, 309.5 ],
+					"order" : 1,
 					"source" : [ "obj-80", 0 ]
 				}
 
@@ -575,7 +578,8 @@
 				"name" : "jit.gl.syphonserver.mxo",
 				"type" : "iLaX"
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }
